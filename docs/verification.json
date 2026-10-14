@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "total": 17,
+  "checks": [
+    "10 secciones con estructura semántica",
+    "Un único título principal",
+    "Todos los enlaces internos tienen destino",
+    "El menú abre",
+    "El menú cierra con Escape",
+    "El menú cierra al navegar",
+    "Cuatro pestañas operativas",
+    "Pestañas accesibles por teclado",
+    "Nueve porcentajes del casco",
+    "Cada porcentaje muestra el dato correcto",
+    "Selección del casco reversible",
+    "Cinco puntos ciegos operativos",
+    "Punto siguiente vuelve al primero",
+    "Puntos ciegos accesibles por teclado",
+    "Compartir abre alternativa local",
+    "Copiar enlace confirma tras copiar",
+    "Sin formularios ni envíos de datos personales"
+  ],
+  "limits": [
+    "Pruebas DOM: no incluyen layout ni comparación visual en un navegador."
+  ]
+}
