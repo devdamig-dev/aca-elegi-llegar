@@ -2,7 +2,7 @@
 
 Implementación estática en HTML, CSS y JavaScript basada en los SVG de 1920, 1440 y 390 px entregados en `Untitled.zip`.
 
-Repositorio privado: [devdamig-dev/aca-elegi-llegar](https://github.com/devdamig-dev/aca-elegi-llegar), rama `main`.
+Repositorio: [devdamig-dev/aca-elegi-llegar](https://github.com/devdamig-dev/aca-elegi-llegar), rama `main`. Público temporalmente por autorización del usuario para revisar la landing.
 
 Esta copia conserva sin cambios el código de la revisión publicada desde el commit de origen `7e643a06658037f2b7772d749005c9b46749670c`. La configuración interna de Sites no es necesaria para alojarla y no se incluye.
 
@@ -10,7 +10,9 @@ Esta copia conserva sin cambios el código de la revisión publicada desde el co
 
 El workflow `.github/workflows/pages.yml` publica únicamente `dist/` mediante las acciones oficiales de GitHub. Se ejecuta al cambiar la landing en `main` y también permite ejecución manual desde Actions. No requiere compilación ni secretos adicionales.
 
-**Activación pendiente:** el 14/10/2026, Settings → Pages mostró “Upgrade or make this repository public to enable Pages”. El repositorio sigue privado. Para habilitar Pages con el plan actual hace falta autorización para hacerlo público; eso expone también el código, los assets y el historial. Luego se debe seleccionar GitHub Actions como fuente de Pages y ejecutar el workflow. Todavía no hay URL de Pages publicada ni verificada.
+**Publicado y verificado el 14/10/2026:** [ver la landing](https://devdamig-dev.github.io/aca-elegi-llegar/). Se habilitó GitHub Actions como fuente de Pages tras cambiar el repositorio a público con autorización explícita. El [despliegue 38656550555, intento 2](https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/38656550555) terminó correctamente sobre `14d896b95de7dd78ccffaa923997d684c7b15774`. Se comprobó que la URL abre la landing y carga CSS, fuentes e imágenes iniciales. Esto no reemplaza la comparación visual integral contra Figma.
+
+El usuario indicó volver a privado después de revisarla; no se programó un cambio automático. Con el plan actual, volver a privado deshabilita Pages y su URL deja de estar disponible. Hasta que el usuario indique que terminó la revisión, el repositorio permanece público.
 
 ## Estado de esta entrega
 
@@ -30,7 +32,7 @@ No hubo acceso a la infraestructura de navegador exigida por el entorno para com
 
 Subir el contenido completo de `dist/` al directorio de publicación de cualquier hosting estático o cPanel. No requiere Node, compilación ni servicios externos. También se puede abrir `dist/index.html` localmente; compartir/copiar depende de las capacidades y permisos del navegador.
 
-Al utilizar un dominio definitivo, actualizar `og:image` y el enlace de respaldo de `campaignUrl()` en `app.js`. Retirar `noindex,nofollow` al aprobar la publicación de campaña. La revisión alojada mantiene el acceso privado.
+Al utilizar un dominio definitivo, actualizar `og:image` y el enlace de respaldo de `campaignUrl()` en `app.js`. Retirar `noindex,nofollow` al aprobar la publicación de campaña. La revisión original en Sites conserva acceso privado; la revisión en GitHub Pages es pública.
 
 ## Funcionalidad
 

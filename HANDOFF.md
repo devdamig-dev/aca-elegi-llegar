@@ -23,8 +23,9 @@
 
 - **Objetivo y alcance:** habilitar GitHub Pages para obtener una URL de la landing existente.
 - **Preparado:** workflow oficial en `.github/workflows/pages.yml`, con publicación exclusiva de `dist/`, ejecución manual y despliegue tras cambios de la landing en `main`. No cambia HTML, CSS, JavaScript ni assets.
-- **Bloqueo y aprobación pendiente:** Settings → Pages exige actualizar el plan o hacer público el repositorio. Se conserva privado; falta autorización explícita para exponer código, assets e historial al público. Pages aún no está activado y no hay despliegue verificado.
-- **Próximos pasos autorizados:** después de resolver esa aprobación, configurar Pages con GitHub Actions, ejecutar el workflow y comprobar la URL y la carga de recursos. Continúan pendientes tipografía original y QA visual del alcance inicial.
+- **Terminado y evidencia:** el usuario autorizó hacer público el repositorio para revisar la landing. Se aplicó el cambio y se habilitó Pages con fuente GitHub Actions. El run `38656550555`, intento 2, terminó en `success` sobre `14d896b95de7dd78ccffaa923997d684c7b15774`: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/38656550555. URL abierta y verificada: https://devdamig-dev.github.io/aca-elegi-llegar/. Cargan CSS, fuentes e imágenes iniciales; no se realizó comparación visual integral contra los SVG.
+- **Próximos pasos autorizados:** el usuario revisa la landing y luego indica cuándo volver a privado. No se programa ni ejecuta ese cambio antes de su revisión. Con el plan actual, volver a privado deshabilita Pages. Continúan pendientes tipografía original y QA visual del alcance inicial.
+- **Bloqueos y aprobaciones:** ninguno para la publicación actual. El momento de volver a privado depende de la indicación del usuario de que terminó la revisión.
 - **Sugerencias nuevas:** ninguna; no se contrató ningún plan.
-- **Continuidad:** disponible para retomar desde la decisión de visibilidad. No hay ejecución persistente de publicación configurada en Pages.
+- **Continuidad:** disponible para retomar desde los comentarios de revisión o la indicación de volver a privado. El workflow publica automáticamente cambios en `dist/` desde `main` mientras Pages esté habilitado. No hay un cambio de visibilidad en segundo plano.
 - **Core:** no registrado por este chat; sin acceso autorizado ni work item identificado.
