@@ -4,7 +4,13 @@ Implementación estática en HTML, CSS y JavaScript basada en los SVG de 1920, 1
 
 Repositorio privado: [devdamig-dev/aca-elegi-llegar](https://github.com/devdamig-dev/aca-elegi-llegar), rama `main`.
 
-Esta copia conserva sin cambios el código de la revisión publicada desde el commit de origen `7e643a06658037f2b7772d749005c9b46749670c`. La configuración interna de Sites no es necesaria para alojarla y no se incluye. No se activó GitHub Pages ni un despliegue automático.
+Esta copia conserva sin cambios el código de la revisión publicada desde el commit de origen `7e643a06658037f2b7772d749005c9b46749670c`. La configuración interna de Sites no es necesaria para alojarla y no se incluye.
+
+## GitHub Pages
+
+El workflow `.github/workflows/pages.yml` publica únicamente `dist/` mediante las acciones oficiales de GitHub. Se ejecuta al cambiar la landing en `main` y también permite ejecución manual desde Actions. No requiere compilación ni secretos adicionales.
+
+**Activación pendiente:** el 14/10/2026, Settings → Pages mostró “Upgrade or make this repository public to enable Pages”. El repositorio sigue privado. Para habilitar Pages con el plan actual hace falta autorización para hacerlo público; eso expone también el código, los assets y el historial. Luego se debe seleccionar GitHub Actions como fuente de Pages y ejecutar el workflow. Todavía no hay URL de Pages publicada ni verificada.
 
 ## Estado de esta entrega
 

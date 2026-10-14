@@ -18,3 +18,13 @@
 - **Sugerencias nuevas:** ninguna. No se configuró GitHub Pages, CI/CD ni hosting adicional.
 - **Continuidad:** disponible para otro ejecutor desde `dist/styles.css`, una vez identificada la fuente. Consultar el commit actual de `main` para recuperar la entrega; no hay PR en esta etapa.
 - **Core:** no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
+
+## Etapa GitHub Pages · 14/10/2026 · America/Buenos_Aires
+
+- **Objetivo y alcance:** habilitar GitHub Pages para obtener una URL de la landing existente.
+- **Preparado:** workflow oficial en `.github/workflows/pages.yml`, con publicación exclusiva de `dist/`, ejecución manual y despliegue tras cambios de la landing en `main`. No cambia HTML, CSS, JavaScript ni assets.
+- **Bloqueo y aprobación pendiente:** Settings → Pages exige actualizar el plan o hacer público el repositorio. Se conserva privado; falta autorización explícita para exponer código, assets e historial al público. Pages aún no está activado y no hay despliegue verificado.
+- **Próximos pasos autorizados:** después de resolver esa aprobación, configurar Pages con GitHub Actions, ejecutar el workflow y comprobar la URL y la carga de recursos. Continúan pendientes tipografía original y QA visual del alcance inicial.
+- **Sugerencias nuevas:** ninguna; no se contrató ningún plan.
+- **Continuidad:** disponible para retomar desde la decisión de visibilidad. No hay ejecución persistente de publicación configurada en Pages.
+- **Core:** no registrado por este chat; sin acceso autorizado ni work item identificado.
