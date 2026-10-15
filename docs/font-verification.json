@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "date_local": "2026-10-15",
+  "timezone": "America/Buenos_Aires",
+  "source_archive": "pathway-extreme.zip",
+  "source_member": "variable/pathway-extreme-latin-wght-normal.woff2",
+  "production_file": "dist/assets/pathway-extreme-latin-variable.woff2",
+  "sha256": "41e870ef1ab2b76f737ea176457567218389b68272ae6db1f85e4b375a145fa0",
+  "original_bytes_preserved": true,
+  "font_bytes": 31880,
+  "family": "Pathway Extreme",
+  "weight_range": [100, 900],
+  "spanish_characters_verified": true,
+  "local_asset_references_checked": 39,
+  "old_font_references": false,
+  "published_url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "deployed_commit": "e4fe488b43fddfda23ce3f0dff8c2891fc6c9282",
+  "workflow_run": 38675099128,
+  "workflow_conclusion": "success",
+  "browser_font_status": "loaded",
+  "browser_font_check_850": true,
+  "browser_body_width_css_px": 1348,
+  "hero_title_width_css_px": 590,
+  "hero_title_height_css_px": 237.390625,
+  "hero_title_lines_visually_verified": 3,
+  "hero_paragraph_width_css_px": 520,
+  "limits": [
+    "This focused font check does not certify full pixel-perfect equivalence at 1920, 1440 and 390 px.",
+    "The private Sites revision was not updated; this change is published on GitHub Pages."
+  ]
+}

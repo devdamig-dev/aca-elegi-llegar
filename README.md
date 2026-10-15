@@ -54,3 +54,5 @@ El diseño mobile tiene cards sin fotografía y un cierre con texto distinto al 
 ## Tipografía
 
 Pathway Extreme, distribuida bajo SIL Open Font License. `dist/assets/pathway-extreme-latin-variable.woff2` conserva sin modificación el archivo `variable/pathway-extreme-latin-wght-normal.woff2` del ZIP del usuario. Incluye el juego latino con tildes, ñ y signos de apertura. El eje de peso abarca 100–900; ancho y tamaño óptico corresponden a los valores fijos de esa variante, sin aplicar transformaciones artificiales. La licencia completa está en `dist/assets/OFL-Pathway-Extreme.txt`. Se precarga un único WOFF2 de 31.880 bytes.
+
+Publicación de la fuente verificada el 15/10/2026: commit `e4fe488b43fddfda23ce3f0dff8c2891fc6c9282`, run `38675099128` exitoso. El navegador confirma Pathway Extreme cargada y el peso 850 disponible. Se ajustaron los anchos del título y párrafo del hero para recuperar los saltos de línea del SVG con las métricas reales de la fuente. Evidencia y límites en `docs/font-verification.json`. Esta actualización corresponde a GitHub Pages; la revisión privada anterior de Sites no se actualizó.
