@@ -36,9 +36,9 @@
 .aca-hero-inner{position:relative;width:min(1320px,calc(100% - 320px));min-height:788px;margin-inline:auto}
 .aca-hero-copy{width:580px;padding-top:114px}
 .aca-hero-eyebrow{color:var(--aca-navy)}
-.aca-hero h1{font-size:74.9px;font-weight:850;line-height:.988;letter-spacing:-3.05px;margin-top:30px;max-width:590px}
+.aca-hero h1{font-size:74.9px;font-weight:850;line-height:.988;letter-spacing:-3.05px;margin-top:30px;width:590px;max-width:590px}
 .aca-highlight{display:table;transform:rotate(-2deg);border-radius:12px;padding:0 10px 3px;margin-top:10px;color:var(--aca-mint);background:var(--aca-navy);line-height:1.02;white-space:nowrap}
-.aca-hero-description{max-width:540px;margin-top:24px!important;font-size:21px;line-height:1.4;font-weight:500}
+.aca-hero-description{max-width:520px;margin-top:24px!important;font-size:21px;line-height:1.4;font-weight:500}
 .aca-hero-actions{display:flex;align-items:center;gap:13px;margin-top:66px;white-space:nowrap}
 .aca-hero-actions .aca-button:first-child{width:243px;padding-inline:20px}
 .aca-hero-actions .aca-button:last-child{width:265px;padding-inline:20px}
@@ -218,7 +218,7 @@
  .aca-shared::before{background:rgba(0,0,0,.45)}.aca-shared-content{max-width:1280px}.aca-shared-content>p:last-child{max-width:1200px}
 }
 @media(min-width:768px) and (max-width:1279px){
- .aca-container{width:calc(100% - 64px)}.aca-hero-inner{width:calc(100% - 64px)}.aca-hero-copy{width:52%}.aca-hero h1{font-size:clamp(48px,5.3vw,68px)}.aca-hero-description{font-size:19px}.aca-hero-actions{flex-wrap:wrap;gap:12px;margin-top:32px}.aca-hero-scene{left:48%;transform:scale(.76);transform-origin:left top;top:105px}
+ .aca-container{width:calc(100% - 64px)}.aca-hero-inner{width:calc(100% - 64px)}.aca-hero-copy{width:52%}.aca-hero h1{font-size:clamp(48px,5.3vw,68px);width:auto}.aca-hero-description{font-size:19px}.aca-hero-actions{flex-wrap:wrap;gap:12px;margin-top:32px}.aca-hero-scene{left:48%;transform:scale(.76);transform-origin:left top;top:105px}
  .aca-about-intro{grid-template-columns:1fr 1fr;gap:40px}.aca-about-intro h2{font-size:48px}.aca-about-intro>p{padding-top:45px;font-size:18px}.aca-about{min-height:initial;padding-bottom:100px}.aca-pillar{padding:22px;min-height:420px}.aca-pillar h3{font-size:29px}.aca-pillar p{font-size:16px}
  .aca-section-title{font-size:52px}.aca-section-intro{font-size:19px}.aca-risks-grid{grid-template-columns:46% 1fr;gap:24px}.aca-tabs{gap:8px;padding:0}.aca-tab{padding-inline:18px}.aca-helmet-grid{grid-template-columns:1.1fr 1fr}.aca-helmet-stats strong{font-size:70px}.aca-helmet-stats p{font-size:20px}.aca-helmet-stats>article{padding:28px}.aca-advice{padding:20px}.aca-advice h3{font-size:17px}.aca-advice p{font-size:15px}
  .aca-shared h2{font-size:68px}.aca-blind-grid{grid-template-columns:1.1fr 1fr;gap:28px}.aca-blind-detail h3{font-size:34px}.aca-rules-grid{grid-template-columns:40% 1fr;gap:40px}.aca-rule-list{padding:28px}.aca-rule-list h3{font-size:19px}.aca-finale h2{font-size:68px}
