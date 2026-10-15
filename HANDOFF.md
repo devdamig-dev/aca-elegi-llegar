@@ -29,3 +29,13 @@
 - **Sugerencias nuevas:** ninguna; no se contrató ningún plan.
 - **Continuidad:** disponible para retomar desde los comentarios de revisión o la indicación de volver a privado. El workflow publica automáticamente cambios en `dist/` desde `main` mientras Pages esté habilitado. No hay un cambio de visibilidad en segundo plano.
 - **Core:** no registrado por este chat; sin acceso autorizado ni work item identificado.
+
+## Tipografía original · 15/10/2026 · America/Buenos_Aires
+
+- **Objetivo y alcance:** reemplazar Montserrat provisional por las fuentes originales entregadas en `pathway-extreme.zip` y actualizar la revisión de GitHub Pages.
+- **Cambios:** Pathway Extreme variable local WOFF2, pesos 100–900, sin modificar sus bytes. Se actualizan CSS y precarga y se retiran los cinco WOFF de Montserrat y su licencia. No se modifica el contenido ni el JavaScript. Licencia original incluida.
+- **Verificación local:** metadatos de la fuente, eje de peso, juego latino y caracteres españoles comprobados con FontTools. El WOFF2 de producción coincide byte a byte con el ZIP. La verificación de despliegue se registra al finalizar la publicación.
+- **Pendientes autorizados:** comparación visual integral contra los SVG en 1920, 1440 y 390 px, y revisión editorial de estados secundarios. La fuente original ya está resuelta; este estado sustituye los pendientes tipográficos de etapas anteriores.
+- **Sugerencias nuevas:** ninguna.
+- **Continuidad:** disponible para retomar desde QA visual o comentarios del usuario. El repositorio continúa público para revisión, hasta que el usuario indique volver a privado; eso deshabilita Pages con el plan actual.
+- **Core:** no registrado por este chat; sin acceso autorizado ni work item identificado.

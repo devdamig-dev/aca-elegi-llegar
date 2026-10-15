@@ -1,9 +1,5 @@
-@font-face{font-family:ACA;src:url('assets/aca-regular.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:ACA;src:url('assets/aca-medium.woff') format('woff');font-style:normal;font-weight:500;font-display:swap}
-@font-face{font-family:ACA;src:url('assets/aca-semibold.woff') format('woff');font-style:normal;font-weight:600;font-display:swap}
-@font-face{font-family:ACA;src:url('assets/aca-bold.woff') format('woff');font-style:normal;font-weight:700;font-display:swap}
-@font-face{font-family:ACA;src:url('assets/aca-black.woff') format('woff');font-style:normal;font-weight:800 900;font-display:swap}
-:root{--aca-navy:#16213a;--aca-mint:#4fe3c8;--aca-green:#0b6657;--aca-muted:#54617a;--aca-light:#f5f8f9;--aca-line:#dae3e8;--aca-font:ACA,Arial,sans-serif;scroll-behavior:smooth;scroll-padding-top:88px}
+@font-face{font-family:'Pathway Extreme';src:url('assets/pathway-extreme-latin-variable.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+:root{--aca-navy:#16213a;--aca-mint:#4fe3c8;--aca-green:#0b6657;--aca-muted:#54617a;--aca-light:#f5f8f9;--aca-line:#dae3e8;--aca-font:'Pathway Extreme',Arial,sans-serif;scroll-behavior:smooth;scroll-padding-top:88px}
 .aca-page{margin:0;padding:0 0 105px;color:var(--aca-navy);background:var(--aca-light);font-family:var(--aca-font);font-size:18px;-webkit-font-smoothing:antialiased}
 .aca-page *,.aca-page *::before,.aca-page *::after{box-sizing:border-box}
 .aca-page h1,.aca-page h2,.aca-page h3,.aca-page p,.aca-page figure{margin:0}

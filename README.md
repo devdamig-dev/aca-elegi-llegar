@@ -4,7 +4,7 @@ Implementación estática en HTML, CSS y JavaScript basada en los SVG de 1920, 1
 
 Repositorio: [devdamig-dev/aca-elegi-llegar](https://github.com/devdamig-dev/aca-elegi-llegar), rama `main`. Público temporalmente por autorización del usuario para revisar la landing.
 
-Esta copia conserva sin cambios el código de la revisión publicada desde el commit de origen `7e643a06658037f2b7772d749005c9b46749670c`. La configuración interna de Sites no es necesaria para alojarla y no se incluye.
+La implementación parte del commit de origen `7e643a06658037f2b7772d749005c9b46749670c`, con la tipografía actualizada a Pathway Extreme mediante los archivos originales aportados por el usuario. La configuración interna de Sites no es necesaria para alojarla y no se incluye.
 
 ## GitHub Pages
 
@@ -16,9 +16,9 @@ El usuario indicó volver a privado después de revisarla; no se programó un ca
 
 ## Estado de esta entrega
 
-Versión de revisión. **No se declara pixel perfect validado.** Las fuentes originales no están incluidas ni identificadas en los SVG, cuyos textos están convertidos a curvas. Se utiliza Montserrat de forma provisional y local, con cinco pesos. Para cerrar la fidelidad tipográfica hace falta el nombre de la familia y sus pesos, o los archivos WOFF2/TTF originales.
+Versión de revisión. **No se declara pixel perfect validado.** Ya está aplicada Pathway Extreme, suministrada en `pathway-extreme.zip`, como fuente local en toda la landing. Su eje variable permite los pesos reales de 100 a 900, incluidos los intermedios usados por el diseño. Montserrat y sus archivos provisionales se retiraron.
 
-No hubo acceso a la infraestructura de navegador exigida por el entorno para comparar capturas a 1920, 1440 y 390 px. Se completaron comprobaciones del DOM, interacciones, enlaces internos, archivos y sintaxis. El siguiente paso es aplicar la fuente original y contrastar la página renderizada con los tres SVG.
+Se completaron comprobaciones del DOM, interacciones, enlaces internos, archivos y sintaxis en la implementación inicial. La tipografía original ya no es un bloqueo. Sigue pendiente la comparación visual integral a 1920, 1440 y 390 px contra los tres SVG; la apertura de la URL publicada no equivale a esa comparación.
 
 ## Archivos
 
@@ -51,6 +51,6 @@ Se conservó el contenido visible de las referencias, incluyendo sus fuentes est
 
 El diseño mobile tiene cards sin fotografía y un cierre con texto distinto al desktop, respetados en la implementación. Las imágenes JPEG originales se conservan; las PNG se optimizaron a WebP de alta calidad.
 
-## Tipografía provisional
+## Tipografía
 
-Montserrat, distribuida bajo SIL Open Font License. Los archivos WOFF se obtuvieron de los TTF oficiales de Google Fonts y se limitaron al juego latino utilizado en la página. La fuente deberá reemplazarse por la familia original para la aprobación pixel perfect.
+Pathway Extreme, distribuida bajo SIL Open Font License. `dist/assets/pathway-extreme-latin-variable.woff2` conserva sin modificación el archivo `variable/pathway-extreme-latin-wght-normal.woff2` del ZIP del usuario. Incluye el juego latino con tildes, ñ y signos de apertura. El eje de peso abarca 100–900; ancho y tamaño óptico corresponden a los valores fijos de esa variante, sin aplicar transformaciones artificiales. La licencia completa está en `dist/assets/OFL-Pathway-Extreme.txt`. Se precarga un único WOFF2 de 31.880 bytes.
