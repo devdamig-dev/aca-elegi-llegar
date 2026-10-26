@@ -56,3 +56,16 @@
 - Sugerencias nuevas: ninguna.
 - Continuidad: etapa implementada y publicada; disponible para otro ejecutor desde este repositorio y estas evidencias, sin promesa de trabajo en segundo plano.
 - Core: no registrado por este chat; sin acceso autorizado ni work item inequívoco identificado.
+
+## Copy definitivo del casco y carruseles automáticos · 26/10/2026 · America/Buenos_Aires
+
+- Objetivo y alcance: cargar los nueve títulos/mensajes entregados; cierre de Mentón tras animación de rotura; fotos automáticas cada 2 segundos y selección por hover, sin controles visibles.
+- Terminado: copy exacto en modales y hover, animación ilustrativa de Mentón de 1,6 segundos, cierre al finalizar, fallback y movimiento reducido. Carrusel sin flechas, puntos ni contadores; selección y pausa por hover/foco, continuación al salir, tap y swipe.
+- Publicado: main, código 97bf3cc0a3ebeb309991e86f023d641ae94b068f; run 40391302262 exitoso: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40391302262
+- Evidencia: 41/41 pruebas en docs/interaction-revision-verification.json. Navegador y capturas en docs/browser-revision-verification.json, docs/qa-risk-revision.png y docs/qa-helmet-revision.png. Revisados hover sostenido y continuación, cierre animado, Escape/foco, modal a 390 px sin overflow ni scroll interno.
+- Límites: animación ilustrativa, sin simulación física. QA visual enfocado en los componentes modificados, sin comparación pixel a pixel integral de la landing.
+- Pendientes / próximos pasos autorizados: implementación solicitada completa; revisar URL e incorporar observaciones del usuario si las hay.
+- Sugerencias nuevas: ninguna. Bloqueos/aprobaciones: ninguno para este alcance. Se conserva la autorización previa de repositorio público; no se cambia su visibilidad.
+- Referencias: https://devdamig-dev.github.io/aca-elegi-llegar/; repo devdamig-dev/aca-elegi-llegar, rama main, sin PR. Cambios en dist/app.js, dist/interactions.css e index.html. No se modificó la revisión Sites antigua.
+- Continuidad: etapa completa; disponible para otro ejecutor desde este repositorio y el resultado publicado.
+- Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.

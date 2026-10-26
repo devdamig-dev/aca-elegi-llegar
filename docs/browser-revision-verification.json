@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-26",
+  "url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "code_commit": "97bf3cc0a3ebeb309991e86f023d641ae94b068f",
+  "deployment_run": 40391302262,
+  "deployment": "success",
+  "browser": {
+    "helmet_menton": {
+      "title": "El golpe más frecuente.",
+      "opening_state": "is-playing; closing empty",
+      "final_state": "is-complete; closing visible",
+      "closing": "Por eso, abrocharlo no es opcional.",
+      "images_loaded": true,
+      "escape_closes_and_restores_focus": true
+    },
+    "helmet_frente": {
+      "title": "Casi 1 de cada 5 golpes.",
+      "message": "Es la segunda zona más golpeada. Si el casco se mueve cuando sacudís la cabeza, no es de tu talle.",
+      "impact_and_closing_hidden": true
+    },
+    "mobile": {
+      "viewport_css": [
+        390,
+        844
+      ],
+      "horizontal_overflow": false,
+      "dialog_height": 623.68,
+      "dialog_scroll_height": 621,
+      "dialog_client_height": 621
+    },
+    "carousel": {
+      "visible_controls": 0,
+      "hover_item": "Mayor distancia de frenado",
+      "hover_held_for_more_than_9_seconds": true,
+      "after_hover_leave_and_2200ms_wait": "Marcas viales y superficies resbaladizas",
+      "photo_loaded": true
+    },
+    "javascript_errors": []
+  },
+  "screenshots": [
+    "docs/qa-risk-revision.png",
+    "docs/qa-helmet-revision.png"
+  ],
+  "limits": [
+    "La animación es ilustrativa, no una simulación de impacto real.",
+    "Las 41 pruebas DOM cubren los nueve copys, los doce estados y los timers; la verificación visual del navegador se enfocó en carrusel Lluvia y modales Mentón/Frente."
+  ]
+}
