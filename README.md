@@ -1,58 +1,40 @@
 # ACA MOV — Elegí llegar
 
-Implementación estática en HTML, CSS y JavaScript basada en los SVG de 1920, 1440 y 390 px entregados en `Untitled.zip`.
+Landing estática HTML/CSS/JavaScript con Pathway Extreme local, basada en el Figma aprobado por el cliente.
 
-Repositorio: [devdamig-dev/aca-elegi-llegar](https://github.com/devdamig-dev/aca-elegi-llegar), rama `main`. Público temporalmente por autorización del usuario para revisar la landing.
+- URL: https://devdamig-dev.github.io/aca-elegi-llegar/
+- Repositorio: https://github.com/devdamig-dev/aca-elegi-llegar · rama `main`.
+- Diseño: https://www.figma.com/design/JNI4aFQ7pVd3xB5lYZPA6H/ACA-MOV?node-id=0-1
 
-La implementación parte del commit de origen `7e643a06658037f2b7772d749005c9b46749670c`, con la tipografía actualizada a Pathway Extreme mediante los archivos originales aportados por el usuario. La configuración interna de Sites no es necesaria para alojarla y no se incluye.
+## Actualización 26/10/2026
 
-## GitHub Pages
+Ocho secciones conforme al contenido aprobado, logo ACA original, nuevas estadísticas FIA y CTA «Conocé Socio Moto». Se retiraron las dos secciones de autos del diseño anterior.
 
-El workflow `.github/workflows/pages.yml` publica únicamente `dist/` mediante las acciones oficiales de GitHub. Se ejecuta al cambiar la landing en `main` y también permite ejecución manual desde Actions. No requiere compilación ni secretos adicionales.
+### Lo que pasa en la calle
 
-**Publicado y verificado el 14/10/2026:** [ver la landing](https://devdamig-dev.github.io/aca-elegi-llegar/). Se habilitó GitHub Actions como fuente de Pages tras cambiar el repositorio a público con autorización explícita. El [despliegue 38656550555, intento 2](https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/38656550555) terminó correctamente sobre `14d896b95de7dd78ccffaa923997d684c7b15774`. Se comprobó que la URL abre la landing y carga CSS, fuentes e imágenes iniciales. Esto no reemplaza la comparación visual integral contra Figma.
+Cuatro pestañas con los doce textos exactos entregados por el usuario. Cada pestaña tiene un carrusel manual de tres escenas. Flechas, indicadores, selección de ítems, teclado y gestos táctiles mantienen sincronizados imagen, texto y estado. Cambiar de pestaña vuelve a la primera escena. No hay reproducción automática.
 
-El usuario indicó volver a privado después de revisarla; no se programó un cambio automático. Con el plan actual, volver a privado deshabilita Pages y su URL deja de estar disponible. Hasta que el usuario indique que terminó la revisión, el repositorio permanece público.
+La primera imagen de Cruces conserva la fotografía original. Las otras escenas se crearon para ilustrar cada situación; procedencia y prompts en `docs/risk-image-prompts.md`. Los cuatro atlas WebP suman aproximadamente 1,3 MB. Cada tercio es una escena 4:3, sin deformación ni carga externa.
 
-## Estado de esta entrega
+### Casco
 
-Versión de revisión. **No se declara pixel perfect validado.** Ya está aplicada Pathway Extreme, suministrada en `pathway-extreme.zip`, como fuente local en toda la landing. Su eje variable permite los pesos reales de 100 a 900, incluidos los intermedios usados por el diseño. Montserrat y sus archivos provisionales se retiraron.
+Nueve porcentajes: ventana flotante con hover/foco en escritorio y diálogo nativo con clic/Enter/Espacio/tap. Cierre con botón, Escape o fondo; el foco vuelve al activador. Las descripciones identifican la zona y el porcentaje de impactos registrado, sin convertirlo en una probabilidad de lesión. Zonas y valores proceden de Figma; la ubicación es esquemática.
 
-Se completaron comprobaciones del DOM, interacciones, enlaces internos, archivos y sintaxis en la implementación inicial. La tipografía original ya no es un bloqueo. Sigue pendiente la comparación visual integral a 1920, 1440 y 390 px contra los tres SVG; la apertura de la URL publicada no equivale a esa comparación.
+## Archivos y despliegue
 
-## Archivos
+- `dist/index.html`: contenido y estructura.
+- `dist/styles.css`: estilos originales y responsive.
+- `dist/approved.css`: cambios generales del diseño aprobado.
+- `dist/interactions.css`: carruseles y ventanas de detalle.
+- `dist/app.js`: menú, pestañas, carrusel y casco.
+- `dist/assets/`: imágenes, logo, íconos y fuente.
 
-- `dist/index.html`: estructura semántica y contenido editable.
-- `dist/styles.css`: diseño y adaptación responsive. Clases y variables con prefijo `aca-`.
-- `dist/app.js`: navegación, pestañas, puntos del casco, puntos ciegos y compartir.
-- `dist/assets/`: nueve fotografías originales extraídas de los SVG, logo e íconos originales, fuentes locales y favicon derivado del logo.
-- `docs/verification.json`: resultado de 17 comprobaciones funcionales del DOM, sin verificación visual.
+Subir `dist/` a cualquier hosting estático; no requiere compilación. `.github/workflows/pages.yml` publica esa carpeta al cambiarla en `main`. El repositorio continúa público para revisión con la autorización anterior. Volverlo privado queda pendiente de indicación del usuario y deshabilitaría Pages con su plan actual.
 
-## Uso
+## Verificación y límites
 
-Subir el contenido completo de `dist/` al directorio de publicación de cualquier hosting estático o cPanel. No requiere Node, compilación ni servicios externos. También se puede abrir `dist/index.html` localmente; compartir/copiar depende de las capacidades y permisos del navegador.
+34 comprobaciones DOM en `docs/interaction-verification.json`: textos, 12 escenas, 9 detalles, teclado, gestos, menú, ARIA y assets. Verificación de navegador documentada en `docs/browser-verification.json`.
 
-Al utilizar un dominio definitivo, actualizar `og:image` y el enlace de respaldo de `campaignUrl()` en `app.js`. Retirar `noindex,nofollow` al aprobar la publicación de campaña. La revisión original en Sites conserva acceso privado; la revisión en GitHub Pages es pública.
+El CTA lleva a la página oficial informativa de Socio Moto, porque Figma no define destino y los enlaces de alta consultados no estaban operativos. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conservan `noindex,nofollow` y la falta de tracking externo para esta URL de revisión.
 
-## Funcionalidad
-
-- Menú mobile con estado accesible y cierre por enlace, clic exterior y Escape.
-- Cuatro pestañas con soporte de teclado.
-- Nueve zonas de impacto del casco y lectura del dato seleccionado.
-- Cinco puntos ciegos, selección directa y navegación circular.
-- Web Share cuando está disponible; diálogo con copia de enlace como alternativa.
-- Foco visible y respeto por la preferencia de movimiento reducido.
-
-Los eventos `aca_navigation`, `aca_risk_tab`, `aca_helmet_point`, `aca_blind_point` y `aca_share` se agregan a `window.dataLayer`. No hay contenedor GTM ni píxeles publicitarios configurados y no se envían datos a servicios externos desde el código.
-
-## Alcance del contenido
-
-Se conservó el contenido visible de las referencias, incluyendo sus fuentes estadísticas. La exactitud editorial de esas cifras no fue auditada en este desarrollo. Los SVG muestran el primer estado de las pestañas y del auto; los textos de los otros estados se redactaron para hacer operativos esos controles y quedan sujetos a revisión de ACA. No se inventaron imágenes adicionales: todos los estados conservan el material visual entregado.
-
-El diseño mobile tiene cards sin fotografía y un cierre con texto distinto al desktop, respetados en la implementación. Las imágenes JPEG originales se conservan; las PNG se optimizaron a WebP de alta calidad.
-
-## Tipografía
-
-Pathway Extreme, distribuida bajo SIL Open Font License. `dist/assets/pathway-extreme-latin-variable.woff2` conserva sin modificación el archivo `variable/pathway-extreme-latin-wght-normal.woff2` del ZIP del usuario. Incluye el juego latino con tildes, ñ y signos de apertura. El eje de peso abarca 100–900; ancho y tamaño óptico corresponden a los valores fijos de esa variante, sin aplicar transformaciones artificiales. La licencia completa está en `dist/assets/OFL-Pathway-Extreme.txt`. Se precarga un único WOFF2 de 31.880 bytes.
-
-Publicación de la fuente verificada el 15/10/2026: commit `e4fe488b43fddfda23ce3f0dff8c2891fc6c9282`, run `38675099128` exitoso. El navegador confirma Pathway Extreme cargada y el peso 850 disponible. Se ajustaron los anchos del título y párrafo del hero para recuperar los saltos de línea del SVG con las métricas reales de la fuente. Evidencia y límites en `docs/font-verification.json`. Esta actualización corresponde a GitHub Pages; la revisión privada anterior de Sites no se actualizó.
+Detalles de diseño en `docs/approved-design.md` y continuidad en `HANDOFF.md`.

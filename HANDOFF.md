@@ -40,3 +40,19 @@
 - **Sugerencias nuevas:** ninguna.
 - **Continuidad:** disponible para retomar desde QA visual o comentarios del usuario. El repositorio continúa público para revisión, hasta que el usuario indique volver a privado; eso deshabilita Pages con el plan actual.
 - **Core:** no registrado por este chat; sin acceso autorizado ni work item identificado.
+
+
+## Diseño aprobado e interacciones · 26/10/2026 · America/Buenos_Aires
+
+- Objetivo: actualizar la landing con el Figma aprobado, cuatro carruseles de riesgos y detalle del casco por hover/clic/tap.
+- Terminado: 8 secciones, 12 textos exactos, 12 escenas, 9 zonas con tooltip y modal, logo, copy y estadísticas del diseño aprobado; CTA Socio Moto. Fuente Pathway Extreme local.
+- Publicación: main, commit e7cc208439a78d2a5bb218e579bfa229ac2b28c0; GitHub Pages run 40380162685 exitoso. https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40380162685
+- Evidencia: 34 pruebas DOM satisfactorios en docs/interaction-verification.json; pruebas del navegador en docs/browser-verification.json. Sin overflow horizontal a 390/768/1440/1920 px y en borde fraccional de 767,8 px; nueve diálogos en mobile dentro del viewport, Escape restaura foco. Se revisaron los doce estados del carrusel. Captura general docs/qa-hero.jpg.
+- Ajustes detectados en QA: especificidad de resets de botones/imágenes impedía tipografía y cards mobile; corregido. Cubierto hueco de media queries para anchos fraccionales.
+- Límites: no se certifica comparación pixel a pixel integral de todas las secciones. Las fotos nuevas son ilustrativas generadas y las descripciones de casco explican región/distribución de impactos; no estaban como copy detallado en Figma.
+- Pendientes / próximos pasos autorizados: revisión del usuario de las escenas nuevas y del resultado en la URL; incorporar sus observaciones. La adaptación mobile conserva también las 3 tarjetas FIA que figuran en desktop.
+- Referencias: https://devdamig-dev.github.io/aca-elegi-llegar/; Figma JNI4aFQ7pVd3xB5lYZPA6H, frames 17:3 y 17:1931. Sin PR. No se actualizó la antigua revisión Sites.
+- Bloqueos y aprobaciones: ninguno para esta entrega. Repositorio público por autorización previa; volver a privado solo cuando lo indique el usuario.
+- Sugerencias nuevas: ninguna.
+- Continuidad: etapa implementada y publicada; disponible para otro ejecutor desde este repositorio y estas evidencias, sin promesa de trabajo en segundo plano.
+- Core: no registrado por este chat; sin acceso autorizado ni work item inequívoco identificado.
