@@ -12,13 +12,13 @@ Ocho secciones conforme al contenido aprobado, logo ACA original, nuevas estadí
 
 ### Lo que pasa en la calle
 
-Cuatro pestañas con los doce textos exactos entregados por el usuario. Cada pestaña tiene un carrusel manual de tres escenas. Flechas, indicadores, selección de ítems, teclado y gestos táctiles mantienen sincronizados imagen, texto y estado. Cambiar de pestaña vuelve a la primera escena. No hay reproducción automática.
+Cuatro pestañas con los doce textos exactos entregados por el usuario. Cada pestaña tiene tres escenas que rotan automáticamente cada 2 segundos, sin flechas, indicadores ni números visibles. El hover o foco de teclado sobre un ítem selecciona y mantiene su foto; al salir retoma la rotación. Clic/tap y gestos táctiles también permiten seleccionar escenas. Cambiar de pestaña vuelve a la primera escena. La rotación se pausa fuera de pantalla, al ocultar la pestaña y con la preferencia de movimiento reducido.
 
 La primera imagen de Cruces conserva la fotografía original. Las otras escenas se crearon para ilustrar cada situación; procedencia y prompts en `docs/risk-image-prompts.md`. Los cuatro atlas WebP suman aproximadamente 1,3 MB. Cada tercio es una escena 4:3, sin deformación ni carga externa.
 
 ### Casco
 
-Nueve porcentajes: ventana flotante con hover/foco en escritorio y diálogo nativo con clic/Enter/Espacio/tap. Cierre con botón, Escape o fondo; el foco vuelve al activador. Las descripciones identifican la zona y el porcentaje de impactos registrado, sin convertirlo en una probabilidad de lesión. Zonas y valores proceden de Figma; la ubicación es esquemática.
+Nueve porcentajes: ventana flotante con hover/foco en escritorio y diálogo nativo con clic/Enter/Espacio/tap. Cierre con botón, Escape o fondo; el foco vuelve al activador. Los nueve títulos y mensajes corresponden al copy entregado por el usuario el 26/10/2026. El modal de Mentón incluye una animación ilustrativa de rotura y revela «Por eso, abrocharlo no es opcional.» al terminar. Con movimiento reducido presenta el cierre directamente. Zonas y valores proceden de Figma; la ubicación es esquemática.
 
 ## Archivos y despliegue
 
@@ -33,7 +33,7 @@ Subir `dist/` a cualquier hosting estático; no requiere compilación. `.github/
 
 ## Verificación y límites
 
-34 comprobaciones DOM en `docs/interaction-verification.json`: textos, 12 escenas, 9 detalles, teclado, gestos, menú, ARIA y assets. Verificación de navegador documentada en `docs/browser-verification.json`.
+La verificación inicial quedó en `docs/interaction-verification.json` y `docs/browser-verification.json`. La revisión del copy y la rotación automática se registra en `docs/interaction-revision-verification.json`; la evidencia inicial corresponde a los controles manuales y textos anteriores.
 
 El CTA lleva a la página oficial informativa de Socio Moto, porque Figma no define destino y los enlaces de alta consultados no estaban operativos. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conservan `noindex,nofollow` y la falta de tracking externo para esta URL de revisión.
 

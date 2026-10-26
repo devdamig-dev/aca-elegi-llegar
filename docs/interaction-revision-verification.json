@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "total": 41,
+  "passed": 41,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Carousel contains photos without arrows, dots, counters or visible controls",
+      "status": "passed"
+    },
+    {
+      "name": "cruces: exact three texts, hover selects corresponding photos, tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "lluvia: exact three texts, hover selects corresponding photos, tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "noche: exact three texts, hover selects corresponding photos, tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "autos: exact three texts, hover selects corresponding photos, tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "Autoplay advances at 2000 ms, wraps after three photos and does not spam live region",
+      "status": "passed"
+    },
+    {
+      "name": "Hover holds selected photo, leaving restarts a full 2000 ms interval",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard focus selects and holds photo; blur resumes autoplay",
+      "status": "passed"
+    },
+    {
+      "name": "Touch hover is ignored; tapping selects and resets rotation",
+      "status": "passed"
+    },
+    {
+      "name": "Tab changes reset timer and never accumulate concurrent rotations",
+      "status": "passed"
+    },
+    {
+      "name": "Hidden document and offscreen carousel suspend rotation; visible resumes",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion suspends autoplay while manual item selection remains available",
+      "status": "passed"
+    },
+    {
+      "name": "Horizontal swipe selects next photo; vertical and cancelled gestures are ignored",
+      "status": "passed"
+    },
+    {
+      "name": "Tab keyboard navigation maintains selected state and focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Mentón: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Mentón: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Frente: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Frente: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Parte trasera: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Parte trasera: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Trasera baja: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Trasera baja: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Visera: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Visera: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Base trasera: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Base trasera: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Tope frontal: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Tope frontal: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Trasera alta: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Trasera alta: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Corona: approved percentage, exact title/message and native close focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet Corona: hover uses approved title and message without stealing focus",
+      "status": "passed"
+    },
+    {
+      "name": "Tooltip remains hoverable and Escape dismisses it",
+      "status": "passed"
+    },
+    {
+      "name": "All ARIA target references resolve, IDs remain unique",
+      "status": "passed"
+    },
+    {
+      "name": "Chin closing is absent initially, revealed only after the fracture animation completes",
+      "status": "passed"
+    },
+    {
+      "name": "Chin fallback reveals closing if animationend is not dispatched",
+      "status": "passed"
+    },
+    {
+      "name": "Closing and animation stay absent from the other eight helmet zones",
+      "status": "passed"
+    },
+    {
+      "name": "Closing a running animation cancels fallback and reopening starts a fresh timeline",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion reveals final chin state immediately and suppresses animation",
+      "status": "passed"
+    },
+    {
+      "name": "Changing reduced motion while fracture is playing reveals closing without waiting",
+      "status": "passed"
+    },
+    {
+      "name": "Coarse touch pointer opens modal on tap without hover preview",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "JSDOM uses fake timers and simulated pointer/focus events; browser visual timing and native focus behavior require browser verification.",
+    "No visual rendering, pixel comparison or animation drawing validation."
+  ]
+}
