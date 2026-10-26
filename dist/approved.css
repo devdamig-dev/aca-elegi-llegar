@@ -1,0 +1,95 @@
+/* Ajustes del diseño aprobado ACA MOV, 26/10/2026. */
+.aca-page{padding-bottom:0}
+.aca-header{position:sticky;top:0;backdrop-filter:blur(4px)}
+.aca-brand img{width:80.889px;height:45.5px;object-fit:contain}
+.aca-menu{font-weight:600}
+.aca-hero h1,.aca-about-intro h2,.aca-campaign-word,.aca-challenge h2,.aca-rules h2,.aca-finale h2,.aca-stat strong,.aca-stat-number{font-weight:800}
+.aca-hero-scene>.aca-tag{display:none}
+.aca-pillar-label{display:none}
+.aca-pillar-icon{visibility:hidden}
+.aca-challenge{min-height:0;padding-bottom:128px}
+.aca-stat-moto strong{font-size:56px;line-height:1.22;letter-spacing:-2.88px}
+.aca-stat-total strong{font-size:56px;line-height:1;letter-spacing:-1.32px}
+.aca-stat-total small{display:none}
+.aca-fia-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:11px}
+.aca-fia-stat{background:#e7ebf0;min-height:184px;padding:28px}
+.aca-fia-stat:last-child{background:#d5dbe3}
+.aca-fia-stat strong{font-size:56px;line-height:.9;letter-spacing:-1.32px}
+.aca-fia-stat:last-child strong{font-size:72px;letter-spacing:-2.88px}
+.aca-fia-stat p{margin-top:12px;line-height:22.1px}
+.aca-challenge-source{display:block;margin-top:12px!important}
+.aca-finale{min-height:708px}
+.aca-finale h2{max-width:1000px;letter-spacing:-4.3px}
+.aca-finale .aca-container>p{max-width:683px;line-height:31.2px}
+.aca-finale .aca-button{width:auto;min-width:271px;margin-top:32px;padding-inline:36px}
+.aca-footer{padding:64px 0 56px}
+.aca-footer a>img{width:146px;height:82px;object-fit:contain}
+.aca-footer p{margin-top:36px;padding-top:27px;font-size:15px;line-height:23.25px}
+.aca-footer .aca-footer-email{display:flex;align-items:center;gap:16px;width:max-content;max-width:100%;min-height:44px;margin-top:7px;font-size:15px;line-height:23.25px}
+.aca-footer-email:hover{color:var(--aca-mint)}
+.aca-footer .aca-footer-email>img{width:24px;height:24px;flex:none}
+@media(min-width:1280px){
+ .aca-hero-copy{padding-top:118px}
+ .aca-hero h1{margin-top:28px;line-height:.98}
+ .aca-hero-actions{margin-top:42px}
+ .aca-hero-scene{left:593.267px;top:72px;width:526.733px;height:620px}
+ .aca-hero-photo{left:105.36px;top:0;width:421.382px;height:526.72px!important}
+ .aca-hero-small{left:0;top:380.25px;width:231.75px;height:231.75px}
+ .aca-float-understand{left:-18.267px;top:17px}
+ .aca-float-change{left:315.732px;top:190px}
+ .aca-float-community{left:-48.267px;top:327px}
+}
+@media(min-width:1700px){
+ .aca-hero-copy{padding-top:79.36px}
+ .aca-hero h1{margin-top:82px}
+ .aca-hero-actions{margin-top:42px}
+ .aca-hero-scene{left:664.268px;width:726.733px}
+ .aca-hero-photo{left:145.366px;width:581.381px}
+ .aca-hero-small{width:319.747px}
+ .aca-float-understand{left:-34.268px;top:58px}
+ .aca-float-change{left:508.732px;top:250px}
+ .aca-float-community{left:13.732px;top:313px}
+}
+@media(min-width:768px) and (max-width:1279px){
+ .aca-stat-moto strong,.aca-stat-total strong{font-size:44px}
+ .aca-fia-stat{padding:24px;min-height:200px}
+ .aca-fia-stat strong{font-size:48px}
+ .aca-fia-stat p{font-size:16px}
+}
+@media(max-width:767px){
+ .aca-page{padding-bottom:0}
+ .aca-brand img{width:72.889px;height:41px}
+ .aca-hero{min-height:0;padding-bottom:64px}
+ .aca-hero-inner{min-height:0}
+ .aca-hero-copy{padding-top:29px}
+ .aca-hero h1{font-size:36px;font-weight:800;letter-spacing:-1.4px}
+ .aca-highlight{font-size:36px}
+ .aca-hero-description{margin-top:25px!important}
+ .aca-hero-actions{margin-top:32px}
+ .aca-hero-scene{height:500px;margin-top:40px}
+ .aca-hero-photo{top:11.86px;height:459px!important;aspect-ratio:auto}
+ .aca-hero-small{top:auto;bottom:8px}
+ .aca-hero-scene>.aca-tag{display:flex}
+ .aca-tag-electric{top:11.86px}
+ .aca-tag-tech{top:auto;bottom:127.14px}
+ .aca-pillar-icon{visibility:visible}
+ .aca-challenge{min-height:0;padding:56px 0}
+ .aca-stat-total strong{font-size:48px}
+ .aca-stat-total small{display:block}
+ .aca-stat-moto strong{font-size:72px}
+ .aca-fia-grid{grid-template-columns:1fr;gap:16px;margin-top:16px}
+ .aca-fia-stat{min-height:176px}
+ .aca-fia-stat strong{font-size:56px}
+ .aca-fia-stat:last-child strong{font-size:72px}
+ .aca-challenge-source{font-size:13px;line-height:20px}
+ .aca-finale{min-height:584px;padding:72px 0}
+ .aca-finale h2{font-size:46px;line-height:.88;letter-spacing:-2.3px;max-width:350px}
+ .aca-finale .aca-container>p{font-size:19px;line-height:24.7px;margin-top:31px}
+ .aca-finale .aca-button{font-size:19px;margin-top:40px}
+ .aca-footer{min-height:327px;padding:48px 0}
+ .aca-footer p{font-size:15px;line-height:23.25px;margin-top:36px;padding-top:27px}
+}
+@media(max-width:370px){
+ .aca-hero h1,.aca-highlight{font-size:32px}
+ .aca-finale h2{font-size:42px}
+}

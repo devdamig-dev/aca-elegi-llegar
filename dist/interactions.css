@@ -1,0 +1,45 @@
+/* Módulos de riesgos y casco: interacción sobre la composición aprobada. */
+.aca-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.aca-page section[id]{scroll-margin-top:88px}
+.aca-risk-carousel{position:relative;align-self:start;min-width:0;border-radius:28px;overflow:hidden;background:var(--aca-navy);isolation:isolate}
+.aca-risk-viewport{position:relative;aspect-ratio:4/3;overflow:hidden;touch-action:pan-y}
+.aca-risk-viewport .aca-risk-image{position:absolute;inset:0;width:100%;height:100%;border-radius:0;object-fit:cover}
+.aca-risk-viewport .aca-risk-atlas{height:300%;object-fit:fill;transform:translateY(calc(var(--scene,0) * -100% / 3))}
+.aca-carousel-controls{position:absolute;bottom:12px;left:12px;right:12px;display:flex;align-items:center;gap:8px;color:#fff}
+.aca-carousel-controls::before{position:absolute;inset:-34px -12px -12px;content:"";z-index:-1;background:linear-gradient(transparent,#07101baf);pointer-events:none}
+.aca-carousel-arrow{width:44px;height:44px;flex:none;display:grid;place-items:center;padding:0;border:1px solid #ffffff75;border-radius:50%;background:#16213ae6;color:#fff;font-size:24px;line-height:1}
+.aca-carousel-arrow:hover{background:var(--aca-mint);color:var(--aca-navy);border-color:var(--aca-mint)}
+.aca-carousel-dots{display:flex;justify-content:center;gap:2px;margin-left:auto}
+.aca-carousel-dot{display:grid;place-items:center;width:32px;height:44px;padding:0;background:none;border:0}
+.aca-carousel-dot::after{content:"";width:7px;height:7px;background:#ffffffa3;border-radius:50%;transition:width .18s,background .18s}
+.aca-carousel-dot[aria-pressed=true]::after{width:22px;border-radius:20px;background:var(--aca-mint)}
+.aca-carousel-counter{font-size:12px;line-height:1;font-weight:700;white-space:nowrap;padding:8px 10px;background:#16213ae6;border-radius:30px;margin-right:auto;font-variant-numeric:tabular-nums}
+.aca-tabs{gap:8px;padding-inline:16px;flex-wrap:nowrap}
+.aca-tab{font-size:16px;padding-inline:20px}
+.aca-risk-panel article{border:0;min-height:0;padding:0}
+.aca-risk-item{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--aca-line);border-left:3px solid transparent;padding:20px 16px;min-height:90px;color:var(--aca-navy);background:transparent;transition:background .18s,border-color .18s}
+.aca-risk-item[aria-pressed=true]{border-left-color:var(--aca-mint);background:linear-gradient(90deg,#4fe3c80d,transparent 55%)}
+.aca-risk-item:hover{background:#f5f8f9}
+.aca-risk-item-title{display:block;font-size:21px;line-height:27px;color:#000;font-weight:700}
+.aca-risk-item-copy{display:block;font-size:13px;line-height:18px;color:var(--aca-muted);margin-top:6px}
+.aca-helmet-point[aria-expanded=true] span{background:var(--aca-mint)}
+.aca-helmet-point:hover span,.aca-helmet-point:focus-visible span{background:var(--aca-mint)}
+.aca-helmet-popover{position:fixed;z-index:1200;width:min(320px,calc(100vw - 24px));padding:20px;border:1px solid var(--aca-line);border-radius:18px;background:#fff;color:var(--aca-navy);box-shadow:0 16px 48px #16213a30}
+.aca-helmet-popover strong{display:block;font-size:19px;line-height:1.25}
+.aca-helmet-popover p{font-size:14px;line-height:1.5;margin-top:10px}
+.aca-helmet-popover>span{display:block;font-size:12px;color:var(--aca-green);margin-top:12px}
+.aca-helmet-dialog{width:min(500px,calc(100% - 32px));max-height:calc(100dvh - 40px);padding:36px;border:1px solid var(--aca-line);border-radius:24px;background:white;color:var(--aca-navy);box-shadow:0 24px 80px #16213a50;overflow:auto}
+.aca-helmet-dialog::backdrop{background:#0d1424a6;backdrop-filter:blur(4px)}
+.aca-helmet-dialog h2{font-size:32px;line-height:1.1;letter-spacing:-1px;margin-top:16px;padding-right:24px}
+.aca-helmet-dialog .aca-helmet-percentage{font-size:64px;line-height:1.1;letter-spacing:-2px;font-weight:800;color:var(--aca-green);margin:18px 0}
+.aca-helmet-dialog #helmet-dialog-description{font-size:18px;line-height:1.5;font-weight:600}
+.aca-helmet-dialog .aca-helmet-detail{font-size:16px;line-height:1.5;margin-top:16px;color:var(--aca-muted)}
+.aca-helmet-dialog .aca-helmet-source{font-size:12px;line-height:1.5;margin-top:24px;padding-top:16px;border-top:1px solid var(--aca-line);color:var(--aca-muted)}
+.aca-helmet-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:var(--aca-light);font-size:28px!important;color:var(--aca-navy)}
+@media(min-width:768px) and (max-width:1279px){.aca-tabs{padding:0;gap:6px;flex-wrap:wrap}.aca-tab{padding-inline:14px}.aca-risk-item-title{font-size:19px;line-height:25px}}
+@media(max-width:767px){
+ .aca-tabs{padding:0;gap:8px;flex-wrap:wrap}.aca-tab{font-size:15px;padding:8px 14px}
+ .aca-risk-item{min-height:104px;padding:20px 16px}.aca-risk-item-title{font-size:18px;line-height:25px}.aca-risk-item-copy{margin-top:4px}
+ .aca-risk-carousel{width:100%}.aca-carousel-controls{bottom:8px;left:8px;right:8px}
+ .aca-helmet-point{min-width:44px;min-height:44px}.aca-helmet-dialog{padding:28px}.aca-helmet-dialog h2{font-size:28px}.aca-helmet-dialog .aca-helmet-percentage{font-size:56px}
+}

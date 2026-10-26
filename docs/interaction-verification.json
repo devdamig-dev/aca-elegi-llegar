@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "total": 34,
+  "passed": 34,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Approved page has eight sections and one h1",
+      "status": "passed"
+    },
+    {
+      "name": "IDs are unique and every local anchor has a target",
+      "status": "passed"
+    },
+    {
+      "name": "Menu opens and closes on Escape, navigation and outside click",
+      "status": "passed"
+    },
+    {
+      "name": "cruces: exact approved titles and descriptions",
+      "status": "passed"
+    },
+    {
+      "name": "cruces: three scenes, direct selection, controls and tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "lluvia: exact approved titles and descriptions",
+      "status": "passed"
+    },
+    {
+      "name": "lluvia: three scenes, direct selection, controls and tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "noche: exact approved titles and descriptions",
+      "status": "passed"
+    },
+    {
+      "name": "noche: three scenes, direct selection, controls and tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "autos: exact approved titles and descriptions",
+      "status": "passed"
+    },
+    {
+      "name": "autos: three scenes, direct selection, controls and tab reset",
+      "status": "passed"
+    },
+    {
+      "name": "Tab keyboard navigation wraps and maintains focus",
+      "status": "passed"
+    },
+    {
+      "name": "Carousel keyboard arrows, Home and End operate without moving focus",
+      "status": "passed"
+    },
+    {
+      "name": "Touch swipe changes scenes; vertical, short and cancelled gestures do not",
+      "status": "passed"
+    },
+    {
+      "name": "Nine helmet percentages retain approved values and total 100%",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 34,6%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 18,3%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 12,6%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 12,1%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 10,7%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 4%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 3,5%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 3,4%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Helmet 0,8%: title, interpretation, description, close and restored focus",
+      "status": "passed"
+    },
+    {
+      "name": "Hover shows corresponding detail without opening modal or moving focus",
+      "status": "passed"
+    },
+    {
+      "name": "Hover detail remains visible when pointer moves into it",
+      "status": "passed"
+    },
+    {
+      "name": "Hover detail closes after pointer leaves trigger and card",
+      "status": "passed"
+    },
+    {
+      "name": "Escape dismisses hover detail and clears its ARIA association",
+      "status": "passed"
+    },
+    {
+      "name": "Moving keyboard focus to another point after Escape can open its preview",
+      "status": "passed"
+    },
+    {
+      "name": "Dialog cancel does not prevent native dismissal; close resets state and focus",
+      "status": "passed"
+    },
+    {
+      "name": "Resizing/scrolling dismisses a hover card",
+      "status": "passed"
+    },
+    {
+      "name": "ARIA target references all resolve",
+      "status": "passed"
+    },
+    {
+      "name": "Every HTML and dynamic carousel asset exists and is nonempty",
+      "status": "passed"
+    },
+    {
+      "name": "Coarse pointer never opens hover preview; tap still opens detail",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "No image decoding, visual layout, actual pointer hit areas or atlas crop validation.",
+    "Native dialog Escape, focus trap and implicit keyboard activation require a browser; polyfills only set open/close and emit close."
+  ]
+}
