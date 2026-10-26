@@ -3,11 +3,11 @@
 .aca-page{margin:0;padding:0 0 105px;color:var(--aca-navy);background:var(--aca-light);font-family:var(--aca-font);font-size:18px;-webkit-font-smoothing:antialiased}
 .aca-page *,.aca-page *::before,.aca-page *::after{box-sizing:border-box}
 .aca-page h1,.aca-page h2,.aca-page h3,.aca-page p,.aca-page figure{margin:0}
-.aca-page button,.aca-page input{font:inherit}
+.aca-page :where(button,input){font:inherit}
 .aca-page button,.aca-page a{-webkit-tap-highlight-color:transparent}
 .aca-page button{cursor:pointer}
 .aca-page a{color:inherit;text-decoration:none}
-.aca-page img{display:block;max-width:100%;height:auto}
+.aca-page :where(img){display:block;max-width:100%;height:auto}
 .aca-page button:focus-visible,.aca-page a:focus-visible,.aca-page input:focus-visible,.aca-page [tabindex]:focus-visible{outline:3px solid #0b8975;outline-offset:5px}
 .aca-page [hidden]{display:none!important}
 .aca-container{width:min(1120px,calc(100% - 80px));margin-inline:auto}

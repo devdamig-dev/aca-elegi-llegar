@@ -85,7 +85,7 @@
     photo.width = isOriginal ? 1448 : 836;
     photo.height = isOriginal ? 1086 : 1881;
     $('#risk-scene').setAttribute('aria-label', `${activeSlide + 1} de 3: ${title}`);
-    carousel.setAttribute('aria-label', `Situaciones en ${riskLabels[activeRisk].toLowerCase()}`);
+    carousel.setAttribute('aria-label', `Situaciones: ${riskLabels[activeRisk]}`);
     $('#risk-counter').textContent = `${activeSlide + 1} / 3`;
     $$('.aca-risk-item').forEach((button, i) => button.setAttribute('aria-pressed', String(i === activeSlide)));
     $$('.aca-carousel-dot').forEach((button, i) => button.setAttribute('aria-pressed', String(i === activeSlide)));
