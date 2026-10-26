@@ -36,8 +36,8 @@
 .aca-helmet-dialog .aca-helmet-detail{font-size:16px;line-height:1.5;margin-top:16px;color:var(--aca-muted)}
 .aca-helmet-dialog .aca-helmet-source{font-size:12px;line-height:1.5;margin-top:24px;padding-top:16px;border-top:1px solid var(--aca-line);color:var(--aca-muted)}
 .aca-helmet-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:var(--aca-light);font-size:28px!important;color:var(--aca-navy)}
-@media(min-width:768px) and (max-width:1279px){.aca-tabs{padding:0;gap:6px;flex-wrap:wrap}.aca-tab{padding-inline:14px}.aca-risk-item-title{font-size:19px;line-height:25px}}
-@media(max-width:767px){
+@media(min-width:768px) and (max-width:1279.98px){.aca-tabs{padding:0;gap:6px;flex-wrap:wrap}.aca-tab{padding-inline:14px}.aca-risk-item-title{font-size:19px;line-height:25px}}
+@media(max-width:767.98px){
  .aca-tabs{padding:0;gap:8px;flex-wrap:wrap}.aca-tab{font-size:15px;padding:8px 14px}
  .aca-risk-item{min-height:104px;padding:20px 16px}.aca-risk-item-title{font-size:18px;line-height:25px}.aca-risk-item-copy{margin-top:4px}
  .aca-risk-carousel{width:100%}.aca-carousel-controls{bottom:8px;left:8px;right:8px}

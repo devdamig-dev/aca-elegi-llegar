@@ -50,13 +50,13 @@
  .aca-float-change{left:508.732px;top:250px}
  .aca-float-community{left:13.732px;top:313px}
 }
-@media(min-width:768px) and (max-width:1279px){
+@media(min-width:768px) and (max-width:1279.98px){
  .aca-stat-moto strong,.aca-stat-total strong{font-size:44px}
  .aca-fia-stat{padding:24px;min-height:200px}
  .aca-fia-stat strong{font-size:48px}
  .aca-fia-stat p{font-size:16px}
 }
-@media(max-width:767px){
+@media(max-width:767.98px){
  .aca-page{padding-bottom:0}
  .aca-brand img{width:72.889px;height:41px}
  .aca-hero{min-height:0;padding-bottom:64px}
