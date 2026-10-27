@@ -88,7 +88,7 @@
 - Objetivo y alcance: igualar el escudo de «Verificá que esté homologado» al verde oscuro de los otros tres consejos del casco.
 - Terminado: variante `dist/assets/icon-shield-check-dark.svg` con los dos trazos #0B6657; cambio exclusivo del src de ese consejo en `dist/index.html`. El escudo menta compartido anteriormente sigue disponible para «Seguridad vial».
 - Evidencia: validación local de los cuatro SVG de consejos: todos sus strokes son #0B6657. XML válido y referencia del escudo menta de «Seguridad vial» conservada. No se repite la suite de interacción por este cambio de asset.
-- Referencias: devdamig-dev/aca-elegi-llegar, main; https://devdamig-dev.github.io/aca-elegi-llegar/. El workflow de Pages publica los cambios de dist; el resultado de despliegue se comprueba en esta entrega. Sin PR.
+- Referencias: devdamig-dev/aca-elegi-llegar, main; https://devdamig-dev.github.io/aca-elegi-llegar/. Publicado desde 7775cac0638975ce38f8d212882b36b2ea1763aa; run 40551758617 success: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40551758617. El navegador confirma la nueva ruta de SVG cargada y los cuatro iconos oscuros; captura en docs/qa-helmet-icon-color.jpg (contador superior capturado durante su animación). Sin PR.
 - Pendientes autorizados: ninguno de implementación para esta corrección. Se conserva la limitación de QA visual mobile de la etapa anterior. Sugerencias nuevas: ninguna. Bloqueos/aprobaciones: ninguno.
 - Continuidad: disponible para otro ejecutor desde main y los comentarios siguientes del usuario. No se modifica la visibilidad del repositorio.
 - Core: no registrado por este chat; sin acceso autorizado ni work item identificado de forma única.
