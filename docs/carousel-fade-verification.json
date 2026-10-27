@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "name": "A loaded image crossfades for 380 ms and its decorative overlay clears on completion",
+      "status": "passed"
+    },
+    {
+      "name": "Rapid selection ignores old image decodes and starts only the latest transition",
+      "status": "passed"
+    },
+    {
+      "name": "Selecting another item cancels an active transition; stale completion cannot hide the new one",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion cancels an active crossfade and immediately restores a single image",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion while decode is pending prevents a delayed crossfade",
+      "status": "passed"
+    },
+    {
+      "name": "A decode rejection does not leave the previous image stuck over the selected scene",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "Mocks simulate loaded images, asynchronous decode and Web Animations API completion/cancellation; browser rendering is not tested."
+  ]
+}

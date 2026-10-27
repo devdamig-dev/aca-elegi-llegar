@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "total": 15,
+  "passed": 15,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Original numeric content remains correct and visible before motion initializes",
+      "status": "passed"
+    },
+    {
+      "name": "Without IntersectionObserver, content stays final and no reveal/counter state is introduced",
+      "status": "passed"
+    },
+    {
+      "name": "Without Web Animations API, reveals remain visible while counters still finish exactly",
+      "status": "passed"
+    },
+    {
+      "name": "A failing animate implementation does not hide content or prevent counter completion",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion initially leaves exact values and makes no animations or counting spans",
+      "status": "passed"
+    },
+    {
+      "name": "All nine counters preserve a static spoken value while visual numbers animate",
+      "status": "passed"
+    },
+    {
+      "name": "Counters restore exact decimal/thousands/suffix strings and stop scheduling after completion",
+      "status": "passed"
+    },
+    {
+      "name": "Counters complete once and remain unchanged on repeated intersection events",
+      "status": "passed"
+    },
+    {
+      "name": "Offscreen counters pause and resume from their current progress",
+      "status": "passed"
+    },
+    {
+      "name": "Changing reduced motion mid-animation restores every exact number and cancels reveals",
+      "status": "passed"
+    },
+    {
+      "name": "Hidden document pauses animations and counters; showing resumes to correct final values",
+      "status": "passed"
+    },
+    {
+      "name": "Desktop ambient offsets reset completely on reduced motion and on narrow pointer mode",
+      "status": "passed"
+    },
+    {
+      "name": "Repeated module loading does not duplicate observers or animation setup",
+      "status": "passed"
+    },
+    {
+      "name": "Progress and menu selection remain bounded with exactly one current location",
+      "status": "passed"
+    },
+    {
+      "name": "Combined app.js then motion.js: counters, tab entry, autoplay, helmet modal and shared reduced-motion preference remain compatible",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "JSDOM tests DOM state and animation scheduling with fake timers/intersection events, not visual rendering or scroll geometry.",
+    "Desktop/mobile layout and smoothness need browser inspection."
+  ]
+}

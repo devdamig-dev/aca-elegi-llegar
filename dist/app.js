@@ -68,13 +68,38 @@
   originalImage.replaceWith(carousel);
   $('#risk-scene').append(originalImage);
   originalImage.id = 'risk-photo';
+  const previousImage = originalImage.cloneNode(false);
+  previousImage.id = 'risk-previous-photo';
+  previousImage.alt = '';
+  previousImage.setAttribute('aria-hidden', 'true');
+  previousImage.removeAttribute('loading');
+  previousImage.hidden = true;
+  $('#risk-scene').append(previousImage);
+  let imageTransition = null;
+  let imageTransitionToken = 0;
   let activeRisk = 'cruces';
   let activeSlide = 0;
   let rotationTimer = null;
   let hoveredRiskItem = null;
   let focusedRiskItem = null;
   let riskVisible = true;
+  let riskPhotosPreloaded = false;
+  const preloadRiskPhotos = () => {
+    if (riskPhotosPreloaded) return;
+    riskPhotosPreloaded = true;
+    Object.values(riskAssets).forEach((asset) => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = `assets/riesgos-${asset}.webp`;
+    });
+  };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const clearImageTransition = () => {
+    imageTransitionToken++;
+    imageTransition?.cancel();
+    imageTransition = null;
+    previousImage.hidden = true;
+  };
   const stopRotation = () => { clearTimeout(rotationTimer); rotationTimer = null; };
   const scheduleRotation = () => {
     stopRotation();
@@ -91,12 +116,34 @@
     const isOriginal = activeRisk === 'cruces' && activeSlide === 0;
     const photo = $('#risk-photo');
     const src = isOriginal ? 'assets/cruce-moto.jpg' : `assets/riesgos-${riskAssets[activeRisk]}.webp`;
+    const changed = photo.getAttribute('src') !== src || photo.style.getPropertyValue('--scene') !== String(isOriginal ? 0 : activeSlide);
+    clearImageTransition();
+    const transitionToken = imageTransitionToken;
+    const shouldFade = changed && !reducedMotion.matches && photo.complete && photo.naturalWidth > 0 && typeof previousImage.animate === 'function';
+    if (shouldFade) {
+      previousImage.src = photo.src;
+      previousImage.className = `${photo.className} aca-risk-previous`;
+      previousImage.style.cssText = photo.style.cssText;
+      previousImage.width = photo.width;
+      previousImage.height = photo.height;
+      previousImage.hidden = false;
+    }
     photo.alt = alt;
     if (photo.getAttribute('src') !== src) photo.src = src;
     photo.classList.toggle('aca-risk-atlas', !isOriginal);
     photo.style.setProperty('--scene', isOriginal ? 0 : activeSlide);
     photo.width = isOriginal ? 1448 : 836;
     photo.height = isOriginal ? 1086 : 1881;
+    if (shouldFade) {
+      const ready = typeof photo.decode === 'function' ? photo.decode().catch(() => {}) : Promise.resolve();
+      ready.then(() => {
+        if (transitionToken !== imageTransitionToken || reducedMotion.matches) return;
+        imageTransition = previousImage.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 380, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'forwards' });
+        imageTransition.finished.then(() => {
+          if (transitionToken === imageTransitionToken) clearImageTransition();
+        }).catch(() => {});
+      });
+    }
     $('#risk-scene').setAttribute('aria-label', `${activeSlide + 1} de 3: ${title}`);
     carousel.setAttribute('aria-label', `Situaciones: ${riskLabels[activeRisk]}`);
     $$('.aca-risk-item').forEach((button, i) => button.setAttribute('aria-pressed', String(i === activeSlide)));
@@ -184,9 +231,11 @@
   setRisk(tabs[0], false, false);
   document.addEventListener('visibilitychange', scheduleRotation);
   reducedMotion.addEventListener('change', scheduleRotation);
+  reducedMotion.addEventListener('change', clearImageTransition);
   if ('IntersectionObserver' in window) {
     const riskObserver = new IntersectionObserver(([entry]) => {
       riskVisible = entry.isIntersecting;
+      if (riskVisible) preloadRiskPhotos();
       scheduleRotation();
     }, { threshold: 0.1 });
     riskObserver.observe(carousel);
