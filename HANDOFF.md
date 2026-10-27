@@ -81,3 +81,14 @@
 - Referencias: repo devdamig-dev/aca-elegi-llegar, rama main, sin PR. Nuevos dist/motion.js y motion.css; cambios en approved.css, app.js, interactions.css e index.html. Dirección y límites en docs/motion-design.md. Revisión Sites anterior sin cambios.
 - Continuidad: implementación de esta etapa completa; disponible para otro ejecutor desde esta versión y con QA visual mobile como primer punto pendiente.
 - Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
+
+
+## Color del icono de homologación · 27/10/2026 · America/Buenos_Aires
+
+- Objetivo y alcance: igualar el escudo de «Verificá que esté homologado» al verde oscuro de los otros tres consejos del casco.
+- Terminado: variante `dist/assets/icon-shield-check-dark.svg` con los dos trazos #0B6657; cambio exclusivo del src de ese consejo en `dist/index.html`. El escudo menta compartido anteriormente sigue disponible para «Seguridad vial».
+- Evidencia: validación local de los cuatro SVG de consejos: todos sus strokes son #0B6657. XML válido y referencia del escudo menta de «Seguridad vial» conservada. No se repite la suite de interacción por este cambio de asset.
+- Referencias: devdamig-dev/aca-elegi-llegar, main; https://devdamig-dev.github.io/aca-elegi-llegar/. El workflow de Pages publica los cambios de dist; el resultado de despliegue se comprueba en esta entrega. Sin PR.
+- Pendientes autorizados: ninguno de implementación para esta corrección. Se conserva la limitación de QA visual mobile de la etapa anterior. Sugerencias nuevas: ninguna. Bloqueos/aprobaciones: ninguno.
+- Continuidad: disponible para otro ejecutor desde main y los comentarios siguientes del usuario. No se modifica la visibilidad del repositorio.
+- Core: no registrado por este chat; sin acceso autorizado ni work item identificado de forma única.
