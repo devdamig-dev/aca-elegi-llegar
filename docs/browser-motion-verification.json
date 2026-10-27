@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-27",
+  "url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "code_commit": "0e25392f873f316bae35de7b8c21d8028e350045",
+  "deployment_run": 40523747232,
+  "deployment": "success",
+  "final_browser_measurements": {
+    "collage": [
+      {
+        "class": "aca-hero-photo",
+        "left": 848.6920776367188,
+        "right": 1227.9295654296875
+      },
+      {
+        "class": "aca-hero-small",
+        "left": 754.12060546875,
+        "right": 962.6956176757812
+      },
+      {
+        "class": "aca-float aca-float-understand",
+        "left": 737.8795776367188,
+        "right": 1032.1795654296875
+      },
+      {
+        "class": "aca-float aca-float-change",
+        "left": 1023.5806274414062,
+        "right": 1317.880615234375
+      },
+      {
+        "class": "aca-float aca-float-community",
+        "left": 711.0865478515625,
+        "right": 1005.3865356445312
+      }
+    ],
+    "css": "approved.css?v=20261027-2",
+    "overflow": false,
+    "viewport": [
+      1363,
+      936
+    ],
+    "viewportContentWidth": 1348,
+    "widths": [
+      {
+        "left": 160,
+        "right": 1188,
+        "selector": ".aca-nav-wrap",
+        "width": 1028
+      },
+      {
+        "left": 160,
+        "right": 1188,
+        "selector": ".aca-hero-inner",
+        "width": 1028
+      },
+      {
+        "left": 160,
+        "right": 1188,
+        "selector": ".aca-footer>.aca-container",
+        "width": 1028
+      }
+    ]
+  },
+  "motion_loaded": [
+    "https://devdamig-dev.github.io/aca-elegi-llegar/app.js?v=20261027-1",
+    "https://devdamig-dev.github.io/aca-elegi-llegar/motion.js?v=20261027-1"
+  ],
+  "motion_ready": "true",
+  "motion_enabled": true,
+  "hero_animation_offsets_observed": [
+    {
+      "x": "0.82px",
+      "y": "1.44px"
+    },
+    {
+      "x": "1.08px",
+      "y": "1.81px"
+    },
+    {
+      "x": "1.26px",
+      "y": "2.06px"
+    },
+    {
+      "x": "1.39px",
+      "y": "2.20px"
+    },
+    {
+      "x": "1.38px",
+      "y": "2.14px"
+    }
+  ],
+  "footer_progress": {
+    "progress": 1,
+    "navCurrentEmpty": true
+  },
+  "page_errors_observed": [],
+  "browser_extension_error_ignored": "Error sending browser metadata to extension, chrome-extension content script, ajeno a la landing.",
+  "external_qa_run": "https://agent.tinyfish.ai/runs/ee691851-1939-431b-9d67-64befe43f622",
+  "external_qa_confirmed": [
+    "Textos y valores finales",
+    "Pestañas de riesgos y ausencia de controles",
+    "Modal Mentón y cierre"
+  ],
+  "external_qa_limitations": [
+    "La extracción externa no encontró scripts pese a detectar atributos creados por motion; su conclusión sobre scripts fue descartada y sustituida por lectura directa de document.scripts y estado de la página.",
+    "Mediciones externas no numéricas/ambiguas descartadas; se usan las mediciones DOM directas."
+  ],
+  "limits": [
+    "Inspección visual directa en viewport 1363x936; las herramientas disponibles no permiten variar viewport. QA visual mobile/1920 pendiente en esta etapa.",
+    "Movimiento reducido, restauración de cifras, fallback y compatibilidad de módulos comprobados en tests funcionales, sin emulación visual del sistema."
+  ],
+  "screenshots": [
+    "docs/qa-motion-hero.jpg",
+    "docs/qa-motion-footer.jpg"
+  ]
+}

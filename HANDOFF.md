@@ -69,3 +69,15 @@
 - Referencias: https://devdamig-dev.github.io/aca-elegi-llegar/; repo devdamig-dev/aca-elegi-llegar, rama main, sin PR. Cambios en dist/app.js, dist/interactions.css e index.html. No se modificó la revisión Sites antigua.
 - Continuidad: etapa completa; disponible para otro ejecutor desde este repositorio y el resultado publicado.
 - Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
+
+## Anchos y pulido dinámico · 27/10/2026 · America/Buenos_Aires
+
+- Objetivo y alcance: igualar header/footer al ancho del hero e incorporar mayor animación e interacción a la landing aprobada.
+- Terminado: contenedor compartido; entradas escalonadas, profundidad del hero, nueve contadores accesibles, movimiento de campaña, navegación/progreso, microinteracciones, modales y fundido de fotos. Ajuste del collage entre 1280 y 1439 px para evitar recorte de una tarjeta. Movimiento reducido y fallback sin ocultado permanente.
+- Publicado y verificado: main, código 0e25392f873f316bae35de7b8c21d8028e350045, run 40523747232 success: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40523747232. URL: https://devdamig-dev.github.io/aca-elegi-llegar/
+- Evidencia: 62/62 checks (41 regresión, 6 fundido, 15 motion). En navegador real a 1363×936: header, hero y footer comparten left160/right1188/width1028; sin overflow; collage completo tras ajuste. Scripts y estado de movimiento confirmados directamente. Capturas y medidas en docs/browser-motion-verification.json, qa-motion-hero.jpg y qa-motion-footer.jpg.
+- Pendientes / próximos pasos autorizados: revisión del usuario de la dinámica. QA visual mobile/1920 pendiente por falta de control de viewport en herramientas disponibles; la lógica mobile y movimiento reducido tienen cobertura funcional. Otro ejecutor puede retomar esa comprobación y aplicar observaciones.
+- Sugerencias nuevas: ninguna. Bloqueos/aprobaciones: ninguno para la implementación publicada; limitación de QA visual indicada. Repositorio público por autorización previa, sin cambio de visibilidad.
+- Referencias: repo devdamig-dev/aca-elegi-llegar, rama main, sin PR. Nuevos dist/motion.js y motion.css; cambios en approved.css, app.js, interactions.css e index.html. Dirección y límites en docs/motion-design.md. Revisión Sites anterior sin cambios.
+- Continuidad: implementación de esta etapa completa; disponible para otro ejecutor desde esta versión y con QA visual mobile como primer punto pendiente.
+- Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
