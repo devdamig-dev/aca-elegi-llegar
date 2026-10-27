@@ -42,6 +42,10 @@
  .aca-float-change{left:315.732px;top:190px}
  .aca-float-community{left:-48.267px;top:327px}
 }
+@media(min-width:1280px) and (max-width:1439.98px){
+ .aca-hero-scene{transform:scale(.9);transform-origin:left top}
+ .aca-float-change{left:min(315.732px,calc(100vw - 1064px))}
+}
 @media(min-width:1700px){
  .aca-hero-copy{padding-top:79.36px}
  .aca-hero h1{margin-top:82px}
