@@ -240,12 +240,17 @@
     });
   });
 
-  // Las pestañas reemplazan los ítems; la rotación de fotos solo cambia atributos.
-  const riskPanel = $('#risk-panel');
-  if (riskPanel && typeof MutationObserver === 'function' && canAnimate) {
-    new MutationObserver(() => {
+  // Solo un cambio de pestaña inicia esta entrada; el autoplay no emite el evento.
+  const riskPanels = $('#risk-panels');
+  if (riskPanels && canAnimate) {
+    riskPanels.addEventListener('aca:riskchange', () => {
+      $$('.aca-risk-panel').forEach((panel) => {
+        animations.get(panel)?.cancel();
+        animations.delete(panel);
+      });
       if (reduce.matches || document.hidden) return;
-      animations.get(riskPanel)?.cancel();
+      const riskPanel = riskPanels.querySelector('.aca-risk-panel:not([hidden])');
+      if (!riskPanel) return;
       try {
         const animation = riskPanel.animate([
           { opacity: 0.35, translate: '0 8px' },
@@ -255,7 +260,7 @@
         const clean = () => { if (animations.get(riskPanel) === animation) animations.delete(riskPanel); };
         if (animation.finished?.then) animation.finished.then(clean, clean);
       } catch { /* Sin animación, el estado nuevo sigue visible y operativo. */ }
-    }).observe(riskPanel, { childList: true });
+    });
   }
 
   hero?.addEventListener('pointermove', (event) => {

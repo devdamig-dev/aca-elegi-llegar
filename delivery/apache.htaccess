@@ -1,0 +1,10 @@
+# Configuración local para /aca-mov/elegi-llegar/ en Apache 2.4.
+# No modifica el resto del dominio.
+<IfModule mod_dir.c>
+    DirectoryIndex index.php
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Conserva REQUEST_URI y la query original para la redirección canónica de PHP.
+    RewriteRule ^index\.html$ index.php [L]
+</IfModule>

@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-28",
+  "status": "passed",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "runtime": "PHP 8.3.6 (cli) (built: Apr 15 2024 19:21:47) (NTS)",
+  "results": [
+    {
+      "name": "PHP 8.3 native linter validates every exported PHP file",
+      "status": "passed",
+      "detail": [
+        "index.php"
+      ]
+    },
+    {
+      "name": "Native PHP HTTP response renders clean HTML at the exact deployment subdirectory",
+      "status": "passed",
+      "detail": {
+        "status": 200,
+        "content_type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "name": "Every packaged asset is served at its relative subdirectory URL with byte-identical content",
+      "status": "passed",
+      "detail": {
+        "assets_served_and_hashed": 44
+      }
+    },
+    {
+      "name": "Native canonical redirects for index.php and missing slash preserve the complete query string",
+      "status": "passed",
+      "detail": [
+        {
+          "request": "/aca-mov/elegi-llegar/index.php",
+          "status": 301,
+          "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/"
+        },
+        {
+          "request": "/aca-mov/elegi-llegar/index.php?utm_source=instagram&utm_campaign=elegi%20llegar&gclid=test%2B123&x=1&x=2",
+          "status": 301,
+          "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/?utm_source=instagram&utm_campaign=elegi%20llegar&gclid=test%2B123&x=1&x=2"
+        },
+        {
+          "request": "/aca-mov/elegi-llegar",
+          "status": 301,
+          "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/"
+        },
+        {
+          "request": "/aca-mov/elegi-llegar?utm_source=instagram&utm_campaign=elegi%20llegar&gclid=test%2B123&x=1&x=2",
+          "status": 301,
+          "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/?utm_source=instagram&utm_campaign=elegi%20llegar&gclid=test%2B123&x=1&x=2"
+        }
+      ]
+    },
+    {
+      "name": "Sitemap is served as valid XML and lists only the canonical client URL",
+      "status": "passed",
+      "detail": {
+        "loc": [
+          "https://promo.aca.org.ar/aca-mov/elegi-llegar/"
+        ]
+      }
+    },
+    {
+      "name": "Canonical page accepts tracking parameters without changing clean canonical metadata or body",
+      "status": "passed"
+    },
+    {
+      "name": "Canonical redirect uses the fixed client origin rather than the request Host",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown routes return real 404 responses even when PHP server fallback resolves the entrypoint",
+      "status": "passed",
+      "detail": [
+        {
+          "path": "/aca-mov/elegi-llegar/no-existe",
+          "status": 404
+        },
+        {
+          "path": "/aca-mov/elegi-llegar/no-existe.php",
+          "status": 404
+        },
+        {
+          "path": "/aca-mov/elegi-llegar/no-existe.jpg",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "name": "Rendered DOM preserves the landing and exposes production SEO, schema, GTM and requested links",
+      "status": "passed",
+      "detail": {
+        "body_equivalent": true,
+        "canonical": "https://promo.aca.org.ar/aca-mov/elegi-llegar/",
+        "schema_types": [
+          "WebPage"
+        ],
+        "referenced_local_assets": 37,
+        "gtm_executed": false,
+        "title": "ACA MOV | Elegí Llegar y seguridad vial en moto",
+        "og_image": "https://promo.aca.org.ar/aca-mov/elegi-llegar/assets/hero-movilidad.jpg"
+      }
+    },
+    {
+      "name": "Apache mapping is exact and locally scoped; robots instructions stay outside public files",
+      "status": "passed",
+      "detail": {
+        "review": "static only",
+        "rewrite_rules": [
+          "RewriteRule ^index\\.html$ index.php [L]"
+        ]
+      }
+    },
+    {
+      "name": "PHP index.html redirect branch preserves queries when the exact Apache alias is routed to it",
+      "status": "passed",
+      "detail": {
+        "routing": "QA adapter simulates only the static Apache alias rewrite; PHP redirect executes natively",
+        "responses": [
+          {
+            "status": 301,
+            "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/"
+          },
+          {
+            "status": 301,
+            "location": "https://promo.aca.org.ar/aca-mov/elegi-llegar/?utm_source=instagram&utm_campaign=elegi%20llegar&gclid=test%2B123&x=1&x=2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "The same files also render from a document root with working relative assets",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "HTTP verification uses native PHP built-in server on localhost; .htaccess directives require Apache and are reviewed separately.",
+    "No browser was controlled from the shell. DOM parsing does not execute GTM or request any external analytics or destination URL.",
+    "Production server modules, TLS, live-domain deployment and Google indexing remain external deployment checks."
+  ],
+  "tested_package": "build/ACA-MOV-PHP-v2/public",
+  "entrypoint_sha256": "d40b7f7c016eb7c6d4553cf25478647c1d97289ddca12d5b4b6f3003a748b99e",
+  "public_file_count": 48,
+  "public_manifest_sha256": "9ef2080c551f91dfa0ce1fc165e335398c7a8a81ff911911b1a1d4aaeb00eafd"
+}

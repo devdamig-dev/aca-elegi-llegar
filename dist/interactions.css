@@ -8,8 +8,10 @@
 .aca-risk-viewport .aca-risk-previous{z-index:1;pointer-events:none}
 .aca-tabs{gap:8px;padding-inline:16px;flex-wrap:nowrap}
 .aca-tab{font-size:16px;padding-inline:20px}
+.aca-page .aca-risk-panel-label{display:none}
 .aca-risk-panel article{border:0;min-height:0;padding:0}
 .aca-risk-item{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--aca-line);border-left:3px solid transparent;padding:20px 16px;min-height:90px;color:var(--aca-navy);background:transparent;transition:background .18s,border-color .18s}
+.aca-page .aca-risk-item:disabled{cursor:default}
 .aca-risk-item[aria-pressed=true]{border-left-color:var(--aca-mint);background:linear-gradient(90deg,#4fe3c80d,transparent 55%)}
 .aca-risk-item:hover{background:#f5f8f9}
 .aca-risk-item-title{display:block;font-size:21px;line-height:27px;color:#000;font-weight:700}

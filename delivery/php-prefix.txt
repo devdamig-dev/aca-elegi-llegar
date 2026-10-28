@@ -1,0 +1,32 @@
+<?php
+// ACA MOV: entrada PHP para la carpeta pública de la landing.
+// La URL canónica es fija: nunca se construye a partir del encabezado Host.
+$acaCanonicalUrl = __CANONICAL_PHP_STRING__;
+$acaCanonicalPath = parse_url($acaCanonicalUrl, PHP_URL_PATH);
+$acaRequestedPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+$acaAliases = [
+    rtrim($acaCanonicalPath, '/'),
+    $acaCanonicalPath . 'index.php',
+    $acaCanonicalPath . 'index.html'
+];
+if (in_array($acaRequestedPath, $acaAliases, true)) {
+    // Mantener UTM/gclid y el resto de la query. Evitar caracteres de control en Location.
+    $acaQuery = str_replace(["\r", "\n"], '', $_SERVER['QUERY_STRING'] ?? '');
+    header('Location: ' . $acaCanonicalUrl . ($acaQuery !== '' ? '?' . $acaQuery : ''), true, 301);
+    exit;
+}
+// Evitar un soft-404 si el hosting deriva rutas desconocidas a este archivo.
+$acaAllowedPaths = [$acaCanonicalPath];
+if (PHP_SAPI === 'cli-server') {
+    // Vista previa local con `php -S ... -t public`.
+    $acaAllowedPaths[] = '/';
+    $acaAllowedPaths[] = '/index.php';
+}
+if ($acaRequestedPath !== '' && $acaRequestedPath !== null && !in_array($acaRequestedPath, $acaAllowedPaths, true)) {
+    http_response_code(404);
+    header('Content-Type: text/html; charset=UTF-8');
+    echo '<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><title>Página no encontrada | ACA MOV</title></head><body><h1>Página no encontrada</h1><p><a href="' . $acaCanonicalUrl . '">Volver a ACA MOV</a></p></body></html>';
+    exit;
+}
+header('Content-Type: text/html; charset=UTF-8');
+?>

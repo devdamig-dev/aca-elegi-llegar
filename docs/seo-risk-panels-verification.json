@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "total": 12,
+  "passed": 12,
+  "results": [
+    {
+      "name": "SSR includes all twelve exact titles/descriptions in four persistent panels",
+      "status": "passed"
+    },
+    {
+      "name": "No-JS CSS exposes all four labeled panels while hiding nonfunctional tabs",
+      "status": "passed"
+    },
+    {
+      "name": "Tab changes keep exactly one panel visible and preserve all original controls",
+      "status": "passed"
+    },
+    {
+      "name": "All twelve item controls select the matching scene without changing hidden panels",
+      "status": "passed"
+    },
+    {
+      "name": "Arrow/Home/End keyboard navigation updates selected tab and focus",
+      "status": "passed"
+    },
+    {
+      "name": "Autoplay remains 2000ms and mouse hover pauses/resumes it",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard item focus pauses rotation and blur resumes",
+      "status": "passed"
+    },
+    {
+      "name": "Touch hover is ignored; tap and horizontal swipe still select scenes",
+      "status": "passed"
+    },
+    {
+      "name": "Tab changes emit one motion event; autoplay/items/same-tab click do not replay panel entry",
+      "status": "passed"
+    },
+    {
+      "name": "Repeated tab switching never duplicates item tracking handlers",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion keeps manual controls but suppresses autoplay and panel animation",
+      "status": "passed"
+    },
+    {
+      "name": "Offscreen carousel pauses and resumes without replacing panels",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "JSDOM verifies DOM, event semantics and scheduling with mocked IO/WAAPI; it does not render pixel layouts or execute real touch gestures."
+  ]
+}

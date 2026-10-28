@@ -1,0 +1,95 @@
+ACA MOV — ELEGÍ LLEGAR
+ENTREGA PHP · 28/10/2026
+
+URL definitiva:
+https://promo.aca.org.ar/aca-mov/elegi-llegar/
+
+1. QUÉ SUBIR
+Subir el CONTENIDO de la carpeta public/ al directorio del servidor que corresponde
+a /aca-mov/elegi-llegar/. index.php debe quedar directamente en ese directorio,
+junto a los CSS, JavaScript, sitemap.xml y la carpeta assets/ completa.
+Incluir el archivo .htaccess si el servidor es Apache y admite AllowOverride.
+No subir la carpeta public/ como un nivel adicional.
+No subir las instrucciones, servidor/ ni los archivos de control al directorio web.
+
+2. REQUISITOS
+PHP 8.3 o superior, con los parches vigentes del proveedor. La landing no requiere
+base de datos, WordPress, Composer, npm ni compilación en el servidor.
+Conservar nombres de archivos, mayúsculas y codificación UTF-8.
+Configurar index.php como documento inicial. Retirar un index.html anterior si
+hubiera uno en esa carpeta, para que no tenga prioridad sobre index.php.
+Mantener habilitado HTTPS para promo.aca.org.ar desde el hosting/proxy existente.
+La configuración SSL/DNS del dominio no forma parte de este paquete.
+
+3. SEO INCLUIDO
+Título y descripción; idioma es-AR; canonical sin parámetros; index,follow;
+vista previa Open Graph y X/Twitter; imagen social y logo locales con URL absoluta;
+JSON-LD WebPage, ImageObject y publisher Automóvil Club Argentino; sitemap.xml.
+No se incluyen valoraciones, datos comerciales ni perfiles sociales inventados.
+Se conserva un solo H1 y los textos aprobados. Los cuatro paneles de riesgos están
+presentes en el HTML; JavaScript controla sus pestañas e imágenes.
+
+La URL pública /aca-mov/elegi-llegar/index.php redirige con 301 a la carpeta final.
+Con Apache, index.html también se deriva a PHP para emitir esa misma redirección.
+Los parámetros UTM, gclid y otros parámetros se conservan al redirigir.
+El canonical, og:url y sitemap apuntan siempre a la URL limpia, sin esos parámetros.
+No hay redirección a partir de Host ni una regla global que altere otras campañas.
+
+4. ROBOTS.TXT Y SEARCH CONSOLE
+El robots.txt válido pertenece a la RAÍZ del dominio:
+https://promo.aca.org.ar/robots.txt
+No colocar un robots.txt dentro de la carpeta de esta landing.
+Integrar la línea de servidor/robots-sitemap-fragment.txt al robots.txt existente,
+conservando sus reglas. Confirmar que ninguna regla ni X-Robots-Tag del hosting
+bloquee esta landing o sus assets. El paquete de producción no contiene noindex.
+
+Desde la propiedad autorizada de Search Console, enviar:
+https://promo.aca.org.ar/aca-mov/elegi-llegar/sitemap.xml
+Luego inspeccionar la URL definitiva y solicitar su indexación si corresponde.
+La configuración de estos servicios y la indexación real se verifican después
+de subir la landing; no se garantiza posición ni fecha de indexación.
+
+5. GTM Y ENLACES
+Contenedor del cliente: GTM-N66LS8.
+Incluido una sola vez al comienzo del head y noscript al inicio del body.
+No pegar una segunda instalación desde una plantilla del servidor.
+Se conserva dataLayer. Verificar en Tag Assistant sobre el dominio definitivo las
+etiquetas, activadores, consentimiento y conversiones configurados por el cliente.
+El paquete instala el contenedor; no modifica su configuración interna.
+
+Socio Moto:
+https://promo.aca.org.ar/socios/sumate-a-la-rodada/index.php
+Email: movilidad@aca.org.ar
+Instagram: https://www.instagram.com/acamovilidad?stkn=MW94aXUwaXV2ZXBweA==
+
+6. COMPROBACIÓN DESPUÉS DE SUBIR
+- La carpeta final responde 200, muestra la landing y no descarga el código PHP.
+- No quedan rutas a GitHub Pages ni al dominio anterior de revisión en metadatos.
+- Imágenes, fuente, CSS y JS responden 200; no hay scroll horizontal inesperado.
+- /index.php?utm_source=qa&gclid=qa123 responde 301 y conserva ambos parámetros.
+- La URL final con esos parámetros responde 200; canonical permanece sin query.
+- sitemap.xml responde 200 y contiene solo la URL canónica.
+- Una ruta inexistente responde 404; no configurar una redirección general a index.php.
+- Menú mobile, cuatro pestañas, rotación/hover de imágenes y modales del casco funcionan.
+- Las tarjetas del hero se mantienen estables y las entradas no se repiten.
+- El botón Socio Moto, Instagram y el enlace de email apuntan a los destinos indicados.
+- Confirmar que no haya cabecera HTTP X-Robots-Tag: noindex añadida por el hosting.
+
+7. APACHE / NGINX
+.htaccess solo aplica a Apache con los módulos y permisos correspondientes.
+Si el proveedor no admite ese archivo, trasladar su configuración al virtual host.
+En Nginx/IIS, configurar index.php como entrada y una redirección EXACTA del alias
+/aca-mov/elegi-llegar/index.html hacia /aca-mov/elegi-llegar/, preservando la query.
+No agregar una regla catch-all ni reemplazar la configuración de otras URLs.
+El servidor integrado de PHP sirve para pruebas locales, no para producción.
+
+8. CONTENIDO Y LICENCIA
+La fuente Pathway Extreme se entrega localmente con su licencia OFL en assets/.
+Se incluyen las imágenes y los textos de la versión aprobada de la landing.
+La captura de revisión no forma parte de los archivos públicos.
+
+REFERENCIAS TÉCNICAS
+https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+https://developers.google.com/search/docs/crawling-indexing/robots/intro
+https://ogp.me/

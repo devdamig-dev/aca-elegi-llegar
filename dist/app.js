@@ -57,7 +57,9 @@
   const riskLabels = { cruces: 'Cruces', lluvia: 'Lluvia', noche: 'De noche', autos: 'Entre autos' };
   const riskAssets = { cruces: 'cruces', lluvia: 'lluvia', noche: 'noche', autos: 'autos' };
   const tabs = $$('.aca-tab');
-  const riskPanel = $('#risk-panel');
+  const riskPanels = $('#risk-panels');
+  const panels = new Map($$('.aca-risk-panel').map((panel) => [panel.dataset.risk, panel]));
+  let riskPanel = panels.get('cruces');
   const originalImage = $('.aca-risk-image');
   const carousel = document.createElement('div');
   carousel.className = 'aca-risk-carousel';
@@ -146,7 +148,7 @@
     }
     $('#risk-scene').setAttribute('aria-label', `${activeSlide + 1} de 3: ${title}`);
     carousel.setAttribute('aria-label', `Situaciones: ${riskLabels[activeRisk]}`);
-    $$('.aca-risk-item').forEach((button, i) => button.setAttribute('aria-pressed', String(i === activeSlide)));
+    [...riskPanel.querySelectorAll('.aca-risk-item')].forEach((button, i) => button.setAttribute('aria-pressed', String(i === activeSlide)));
     if (announce) {
       $('#risk-status').textContent = `${riskLabels[activeRisk]}. Imagen ${activeSlide + 1} de 3: ${title}.`;
       record('aca_risk_slide', { situation: activeRisk, slide: activeSlide + 1 });
@@ -155,31 +157,31 @@
   const selectSlide = (index) => { setSlide(index); scheduleRotation(); };
   const setRisk = (button, focus = false, announce = true) => {
     const key = button.dataset.risk;
-    if (!risks[key]) return;
+    if (!risks[key] || !panels.has(key)) return;
+    const changed = activeRisk !== key;
     hoveredRiskItem = null;
     focusedRiskItem = null;
     activeRisk = key;
+    riskPanel = panels.get(key);
     tabs.forEach((tab) => {
       tab.setAttribute('aria-selected', String(tab === button));
-      tab.setAttribute('aria-controls', 'risk-panel risk-carousel');
+      tab.setAttribute('aria-controls', `risk-panel-${tab.dataset.risk} risk-carousel`);
       tab.tabIndex = tab === button ? 0 : -1;
     });
-    riskPanel.setAttribute('aria-labelledby', button.id);
-    riskPanel.replaceChildren(...risks[key].map(([title, description], index) => {
-      const article = document.createElement('article');
-      const control = document.createElement('button');
-      control.type = 'button';
-      control.className = 'aca-risk-item';
+    panels.forEach((panel) => { panel.hidden = panel !== riskPanel; });
+    setSlide(0, announce);
+    scheduleRotation();
+    if (focus) button.focus();
+    if (changed) riskPanels.dispatchEvent(new CustomEvent('aca:riskchange'));
+    if (announce) record('aca_risk_tab', { situation: key });
+  };
+  // El contenido de las cuatro situaciones ya está en HTML. Se vincula una sola vez.
+  panels.forEach((panel, key) => {
+    [...panel.querySelectorAll('.aca-risk-item')].forEach((control, index) => {
+      control.disabled = false;
       control.setAttribute('aria-controls', 'risk-scene');
-      const heading = document.createElement('span');
-      heading.className = 'aca-risk-item-title';
-      heading.textContent = title;
-      const copy = document.createElement('span');
-      copy.className = 'aca-risk-item-copy';
-      copy.textContent = description;
-      control.append(heading, copy);
       control.addEventListener('pointerenter', (event) => {
-        if (event.pointerType === 'touch') return;
+        if (event.pointerType === 'touch' || activeRisk !== key) return;
         hoveredRiskItem = control;
         selectSlide(index);
       });
@@ -188,7 +190,7 @@
         scheduleRotation();
       });
       control.addEventListener('focus', () => {
-        if (control.matches(':focus-visible')) {
+        if (activeRisk === key && control.matches(':focus-visible')) {
           focusedRiskItem = control;
           selectSlide(index);
         }
@@ -197,15 +199,9 @@
         if (focusedRiskItem === control) focusedRiskItem = null;
         scheduleRotation();
       });
-      control.addEventListener('click', () => selectSlide(index));
-      article.append(control);
-      return article;
-    }));
-    setSlide(0, announce);
-    scheduleRotation();
-    if (focus) button.focus();
-    if (announce) record('aca_risk_tab', { situation: key });
-  };
+      control.addEventListener('click', () => { if (activeRisk === key) selectSlide(index); });
+    });
+  });
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => setRisk(tab));
     tab.addEventListener('keydown', (event) => {

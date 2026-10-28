@@ -1,0 +1,21 @@
+{
+  "url": "https://promo.aca.org.ar/aca-mov/elegi-llegar/",
+  "title": "ACA MOV | Elegí Llegar y seguridad vial en moto",
+  "description": "Conocé los riesgos al circular en moto, cómo usar bien el casco y qué decisiones ayudan a llegar seguro. Elegí Llegar, una iniciativa de ACA MOV.",
+  "site_name": "ACA MOV",
+  "language": "es-AR",
+  "locale": "es_AR",
+  "image": "assets/hero-movilidad.jpg",
+  "image_width": 1448,
+  "image_height": 1086,
+  "image_type": "image/jpeg",
+  "image_alt": "Motociclista y autos compartiendo la calle al atardecer",
+  "publisher": {
+    "name": "Automóvil Club Argentino",
+    "url": "https://www.aca.org.ar/",
+    "logo": "assets/aca-logo-approved.png",
+    "logo_width": 292,
+    "logo_height": 164
+  },
+  "gtm_id": "GTM-N66LS8"
+}

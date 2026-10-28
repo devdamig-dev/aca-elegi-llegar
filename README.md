@@ -12,15 +12,30 @@ Landing estática HTML/CSS/JavaScript con Pathway Extreme local, basada en el Fi
 - «Conocé Socio Moto» apunta a https://promo.aca.org.ar/socios/sumate-a-la-rodada/index.php.
 - El footer conserva movilidad@aca.org.ar y suma Instagram @acamovilidad, con la URL proporcionada por el cliente. Contactos en fila con ajuste de línea en escritorio y apilados en mobile.
 - Destino de la entrega PHP: https://promo.aca.org.ar/aca-mov/elegi-llegar/.
-- Flujo acordado: revisión y aprobación de esta versión en GitHub Pages; después se prepara la exportación PHP. Todavía no se generó ni se envió un paquete de entrega.
+- Revisión aprobada por el usuario el 28/10/2026; exportación PHP con SEO y archivos locales preparada para enviar al cliente. La revisión de GitHub Pages sigue disponible y marcada noindex.
 
-Para esa exportación: entregar `index.php` con todos los CSS, JS, imágenes y fuentes locales, conservar rutas relativas compatibles con el subdirectorio y evitar un `index.html` que compita como entrada. Actualizar canonical/og:url/og:image al dominio definitivo y retirar `noindex,nofollow` de la versión de producción. La revisión de GitHub conserva sus metadatos actuales. Comprobar la instalación real y GTM/Tag Assistant en el hosting del cliente; instalar el contenedor no verifica qué etiquetas o conversiones tiene configuradas dentro.
+La producción incluye `index.php`, todos los CSS/JS/assets, sitemap y configuración Apache local. Canonical, OG, X/Twitter y JSON-LD usan el dominio definitivo; la producción es indexable y la vista previa conserva noindex. Las redirecciones de alias preservan parámetros de campaña y las rutas desconocidas responden 404. El hosting/robots raíz/Search Console y las etiquetas internas de GTM se verifican tras instalar en el servidor del cliente.
+
+### Generar la entrega PHP
+
+La fuente visual e interactiva es `dist/`. Configuración SEO en `delivery/seo.json`, encabezado PHP en `delivery/php-prefix.txt` y guía en `delivery/INSTALACION.txt`. No hay dependencias de build en el hosting.
+
+```sh
+python3 scripts/export-php.py --update-preview
+python3 scripts/export-php.py --output build/ACA-MOV-PHP
+```
+
+El destino debe ser nuevo; el script no sobrescribe entregas anteriores. Produce carpeta y ZIP con `public/`, guía, fragmento para robots raíz, versión y checksums. Subir exclusivamente el contenido de `public/` a `/aca-mov/elegi-llegar/`. PHP 8.3 o superior con parches vigentes. No subir el ZIP completo a la raíz pública ni dejar un index.html anterior compitiendo.
+
+`robots.txt` se configura en la raíz de promo.aca.org.ar: integrar la línea Sitemap provista sin reemplazar reglas existentes. El paquete no modifica DNS, SSL, Search Console ni la configuración de GTM. Validación nativa PHP y archivos en `docs/php-delivery-verification.json`; contenido de riesgos y regresión en `docs/seo-risk-panels-verification.json` y `docs/seo-motion-regression.json`.
 
 ## Actualización 26/10/2026
 
 Ocho secciones conforme al contenido aprobado, logo ACA original, nuevas estadísticas FIA y CTA «Conocé Socio Moto». Se retiraron las dos secciones de autos del diseño anterior.
 
 ### Lo que pasa en la calle
+
+Los cuatro paneles y sus doce textos se sirven en HTML desde la primera respuesta. JavaScript alterna paneles persistentes; sin JavaScript se muestran todos los contenidos con sus rótulos.
 
 Cuatro pestañas con los doce textos exactos entregados por el usuario. Cada pestaña tiene tres escenas que rotan automáticamente cada 2 segundos, sin flechas, indicadores ni números visibles. El hover o foco de teclado sobre un ítem selecciona y mantiene su foto; al salir retoma la rotación. Clic/tap y gestos táctiles también permiten seleccionar escenas. Cambiar de pestaña vuelve a la primera escena. Las fotos se precargan al entrar en la sección y el cambio entre escenas usa un fundido de 380 ms cuando hay movimiento habilitado. La rotación se pausa fuera de pantalla, al ocultar la pestaña y con la preferencia de movimiento reducido.
 
@@ -52,6 +67,6 @@ Subir `dist/` a cualquier hosting estático; no requiere compilación. `.github/
 
 La verificación inicial quedó en `docs/interaction-verification.json` y `docs/browser-verification.json`. La revisión del copy y la rotación automática se registra en `docs/interaction-revision-verification.json`; la evidencia inicial corresponde a los controles manuales y textos anteriores.
 
-El CTA utiliza el destino de asociación confirmado por el cliente. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conserva `noindex,nofollow` para esta URL de revisión; el GTM solicitado ya forma parte de la landing.
+El CTA utiliza el destino de asociación confirmado por el cliente. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conserva `noindex,follow` para esta URL de revisión; el GTM solicitado ya forma parte de la landing.
 
 Detalles de diseño en `docs/approved-design.md` y continuidad en `HANDOFF.md`.
