@@ -32,7 +32,9 @@ Nueve porcentajes: ventana flotante con hover/foco en escritorio y diálogo nati
 
 ## Alineación y movimiento · 27/10/2026
 
-Header, hero y footer comparten el mismo ancho y márgenes responsive mediante `--aca-shell-width`; el ancho del hero aprobado se conserva. La capa de movimiento incorpora entradas por capas, profundidad del collage con cursor/scroll en desktop, aparición de secciones/cards, conteo de estadísticas con valores accesibles estables, movimiento del fondo de campaña, progreso de lectura y respuestas en botones, menú, pestañas y modales. Se conserva el scroll nativo; las animaciones se reducen en mobile y se deshabilitan según la preferencia del usuario.
+Header, hero y footer comparten el mismo ancho y márgenes responsive mediante `--aca-shell-width`; el ancho del hero aprobado se conserva. La capa de movimiento incorpora profundidad suave de las fotos del hero, aparición de secciones/cards, conteo de estadísticas con valores accesibles estables, movimiento del fondo de campaña, progreso de lectura y respuestas en botones, menú, pestañas y modales. Las tarjetas del hero permanecen estables. Se conserva el scroll nativo; las animaciones se reducen en mobile y se deshabilitan según la preferencia del usuario.
+
+Corrección del 28/10/2026: las entradas se preparan solo para contenido situado completamente debajo del viewport y comienzan anticipadamente. El contenido visible al cargar o restaurar scroll conserva su estado final, incluidas las cifras. Los contadores de tarjetas pendientes comienzan con la entrada de su tarjeta, evitando mostrar el valor final antes de reiniciar. La entrada usa `transform`, separado del `translate` del hover/fotos, y nunca mueve las tarjetas del hero.
 
 ## Archivos y despliegue
 

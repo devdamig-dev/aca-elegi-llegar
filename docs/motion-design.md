@@ -16,7 +16,7 @@ Se reutiliza el ancho lógico del hero aprobado. Sus capas fotográficas y tarje
 
 ## Movimiento
 
-- Hero: entrada por capas de textos, foto principal, miniatura y tarjetas. Profundidad con cursor y leve movimiento ambiental solo en escritorio con puntero fino.
+- Hero: textos y tarjetas estables. Profundidad suave solo en la foto principal y miniatura, en escritorio con puntero fino. No se vuelve a ocultar el contenido ya visible al inicializar.
 - Recorrido: entradas escalonadas de encabezados, grids y consejos. Fondo de campaña y camino acompañan el scroll nativo.
 - Datos: nueve cifras cuentan una vez al entrar en pantalla, con texto accesible constante y formato final exacto.
 - Navegación: estado del header, progreso fino de lectura y enlace activo únicamente para secciones representadas.
@@ -27,7 +27,9 @@ Se reutiliza el ancho lógico del hero aprobado. Sus capas fotográficas y tarje
 
 JavaScript/CSS nativos, sin dependencias nuevas. IntersectionObserver y un ciclo requestAnimationFrame coordinan la visibilidad, los contadores y las capas. Sin scroll hijack. Pausa al ocultar la pestaña y fuera de pantalla para ciclos ambientales y contadores. Mobile usa desplazamientos más simples y duraciones menores.
 
-Movimiento reducido cancela los efectos, restaura las cifras exactas y conserva navegación/lectura. Los contenidos base no se ocultan con CSS: si faltan APIs o JavaScript, la página permanece visible.
+Movimiento reducido cancela los efectos, restaura las cifras exactas y conserva navegación/lectura. Los contenidos base no se ocultan con CSS: si faltan APIs o JavaScript, la página permanece visible. JavaScript prepara únicamente los elementos situados completamente debajo del viewport; los revela una sola vez con margen anticipado de 120px. El estado pendiente se libera también si falla WAAPI, al recibir foco o al activar movimiento reducido.
+
+Desde el 28/10/2026, las entradas usan `transform` y los efectos de hover/profundidad usan `translate`, evitando dos animaciones sobre la misma propiedad. Los contadores arrancan junto con la entrada de la tarjeta; si la cifra ya está visible al cargar, conserva directamente el valor final. Esta corrección elimina la secuencia visible → oculto → entrada y los saltos de las tarjetas del hero al terminar la animación inicial.
 
 ## Verificación
 

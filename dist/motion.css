@@ -1,5 +1,6 @@
-/* Movimiento ACA MOV. El contenido permanece visible sin JavaScript. */
+/* Movimiento ACA MOV. Solo se preparan entradas todavía fuera de pantalla. */
 .aca-page{--aca-motion-progress:0}
+.aca-page.aca-motion-enabled .aca-reveal-pending{opacity:0}
 .aca-page .aca-header{transition:background-color .25s ease,box-shadow .25s ease}
 .aca-page.aca-motion-scrolled .aca-header{background-color:rgba(22,33,58,.985);box-shadow:0 5px 24px #0d14242b}
 .aca-page .aca-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--aca-mint);transform-origin:left;transform:scaleX(var(--aca-motion-progress));pointer-events:none}
@@ -36,7 +37,7 @@
  .aca-page.aca-motion-enabled .aca-pillar:hover .aca-pillar-icon>img{rotate:-7deg}
 }
 @media(min-width:1024px) and (hover:hover) and (pointer:fine){
- .aca-page.aca-motion-enabled .aca-hero-photo,.aca-page.aca-motion-enabled .aca-hero-small,.aca-page.aca-motion-enabled .aca-float{translate:var(--aca-motion-x,0px) var(--aca-motion-y,0px)}
+ .aca-page.aca-motion-enabled .aca-hero-photo,.aca-page.aca-motion-enabled .aca-hero-small{translate:var(--aca-motion-x,0px) var(--aca-motion-y,0px)}
  .aca-page.aca-motion-enabled .aca-campaign-photo{scale:1.06;translate:0 var(--aca-motion-campaign-y,0px)}
  .aca-page.aca-motion-enabled .aca-road{translate:0 var(--aca-motion-road-y,0px)}
 }
@@ -46,5 +47,6 @@
 }
 @media(prefers-reduced-motion:reduce){
  .aca-page .aca-header,.aca-page .aca-menu>a::after{transition:none}
- .aca-page .aca-hero-photo,.aca-page .aca-hero-small,.aca-page .aca-float,.aca-page .aca-campaign-photo,.aca-page .aca-road{translate:none;scale:none}
+ .aca-page .aca-reveal-pending{opacity:1}
+ .aca-page .aca-hero-photo,.aca-page .aca-hero-small,.aca-page .aca-campaign-photo,.aca-page .aca-road{translate:none;scale:none}
 }

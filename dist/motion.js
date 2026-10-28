@@ -15,6 +15,8 @@
   const animations = new Map();
   const counters = new Map();
   const seen = new WeakSet();
+  const pending = new Set();
+  const counterSelector = '.aca-stat-number, .aca-stat>strong, .aca-helmet-stats>article>strong';
   let frame = 0;
   let lastTime = 0;
   let elapsed = 0;
@@ -28,11 +30,8 @@
   const header = $('.aca-header');
   const pointer = { x: 0, y: 0, targetX: 0, targetY: 0 };
   const layers = [
-    ['.aca-hero-photo', 5, 0.3],
-    ['.aca-hero-small', -8, 0.55],
-    ['.aca-float-understand', 11, 0.8],
-    ['.aca-float-change', -10, 1.1],
-    ['.aca-float-community', 8, 1.4]
+    ['.aca-hero-photo', 3, 0.3],
+    ['.aca-hero-small', -4, 0.55]
   ].map(([selector, depth, phase]) => ({ element: $(selector), depth, phase })).filter((layer) => layer.element);
   const nav = $$('.aca-menu>a').map((link) => ({ link, section: $(link.getAttribute('href')) })).filter((item) => item.section);
   const sections = $$('main>section[id]');
@@ -85,7 +84,7 @@
     return number + state.suffix;
   };
   const startCounter = (element) => {
-    if (counters.has(element) || reduce.matches) return;
+    if (counters.has(element) || element.dataset.acaCounted || reduce.matches) return;
     const original = element.textContent;
     const match = original.trim().match(/^(\d[\d.,]*)(.*)$/);
     if (!match) return;
@@ -144,21 +143,33 @@
     else lastTime = 0;
   }
 
-  const reveal = (element) => {
+  const releasePending = (element) => {
+    pending.delete(element);
+    element.classList.remove('aca-reveal-pending');
+  };
+  const reveal = (element, immediate = false) => {
     if (seen.has(element)) return;
     seen.add(element);
-    if (reduce.matches || !canAnimate || document.hidden) return;
-    const delay = compact.matches ? Math.min(Number(element.dataset.acaMotionDelay || 0), 120) : Number(element.dataset.acaMotionDelay || 0);
-    const heroLayer = element.matches('.aca-hero-scene>*');
+    // Nunca ocultar algo que el visitante ya vio: solo entran elementos preparados fuera de pantalla.
+    if (!pending.has(element) || immediate || reduce.matches || !canAnimate || document.hidden) {
+      releasePending(element);
+      return;
+    }
+    element.querySelectorAll(counterSelector).forEach(startCounter);
+    const delay = Math.min(Number(element.dataset.acaMotionDelay || 0), 120);
+    // transform controla la entrada; translate queda reservado al hover y a las fotos del hero.
+    const baseTransform = getComputedStyle(element).transform;
+    const initialTransform = `translateY(18px)${baseTransform === 'none' ? '' : ` ${baseTransform}`}`;
     try {
       const animation = element.animate([
-        { opacity: 0, translate: `0 ${heroLayer ? 32 : 24}px` },
-        { opacity: 1, translate: '0 0' }
-      ], { duration: compact.matches ? 520 : (heroLayer ? 950 : 750), delay, easing: 'cubic-bezier(.2,.75,.2,1)', fill: 'backwards' });
+        { opacity: 0, transform: initialTransform },
+        { opacity: 1, transform: baseTransform }
+      ], { duration: compact.matches ? 420 : 560, delay, easing: 'cubic-bezier(.2,.75,.2,1)', fill: 'backwards' });
       animations.set(element, animation);
       const clean = () => { if (animations.get(element) === animation) animations.delete(element); };
       if (animation.finished?.then) animation.finished.then(clean, clean);
     } catch { /* El contenido conserva siempre su estado visible si WAAPI no está disponible. */ }
+    releasePending(element);
   };
   let revealObserver = null;
   let counterObserver = null;
@@ -168,11 +179,11 @@
       entries.forEach(({ target, isIntersecting }) => {
         if (isIntersecting) { reveal(target); revealObserver.unobserve(target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -12px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
     const candidates = new Set();
     const add = (selector, delay = 0) => $$(selector).forEach((element) => { element.dataset.acaMotionDelay = String(delay); candidates.add(element); });
     $$('.aca-hero-copy>*').forEach((element, index) => { element.dataset.acaMotionDelay = String(index * 95); candidates.add(element); });
-    $$('.aca-hero-scene>*').forEach((element, index) => { element.dataset.acaMotionDelay = String(180 + Math.min(index, 4) * 100); candidates.add(element); });
+    $$('.aca-hero-photo, .aca-hero-small').forEach((element, index) => { element.dataset.acaMotionDelay = String(index * 80); candidates.add(element); });
     add('main>section:not(.aca-hero)>.aca-container>.aca-eyebrow');
     add('main>section:not(.aca-hero)>.aca-container>.aca-section-title, .aca-about-intro, .aca-finale h2', 65);
     add('main>section:not(.aca-hero)>.aca-container>.aca-section-intro, .aca-about-more, .aca-finale .aca-container>p', 130);
@@ -184,17 +195,30 @@
       }));
     });
     $$('.aca-campaign-content>*').forEach((element, index) => { element.dataset.acaMotionDelay = String(index * 110); candidates.add(element); });
-    candidates.forEach((element) => revealObserver.observe(element));
+    const viewport = document.documentElement.clientHeight || window.innerHeight;
+    candidates.forEach((element) => {
+      const bounds = element.getBoundingClientRect();
+      if (!reduce.matches && canAnimate && bounds.height > 0 && bounds.top >= viewport) {
+        pending.add(element);
+        element.classList.add('aca-reveal-pending');
+        revealObserver.observe(element);
+      } else {
+        // Incluye recarga a mitad de página, enlaces con hash y elementos ya visibles del hero.
+        seen.add(element);
+      }
+    });
 
     counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
-        if (isIntersecting && !reduce.matches) startCounter(target);
         const state = counters.get(target);
         if (state) state.visible = isIntersecting;
       });
       schedule();
-    }, { threshold: 0.6 });
-    $$('.aca-stat-number, .aca-stat>strong, .aca-helmet-stats>article>strong').forEach((element) => counterObserver.observe(element));
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
+    $$(counterSelector).forEach((element) => {
+      if ([...pending].some((container) => container.contains(element))) counterObserver.observe(element);
+      else element.dataset.acaCounted = 'true';
+    });
 
     ambientObserver = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
@@ -206,6 +230,15 @@
     }, { threshold: 0 });
     [hero, campaign].filter(Boolean).forEach((element) => ambientObserver.observe(element));
   }
+
+  root.addEventListener('focusin', (event) => {
+    pending.forEach((element) => {
+      if (element.contains(event.target)) { reveal(element, true); revealObserver?.unobserve(element); }
+    });
+    animations.forEach((animation, element) => {
+      if (element.contains(event.target)) { animation.cancel(); animations.delete(element); }
+    });
+  });
 
   // Las pestañas reemplazan los ítems; la rotación de fotos solo cambia atributos.
   const riskPanel = $('#risk-panel');
@@ -248,6 +281,7 @@
   const applyPreference = () => {
     root.classList.toggle('aca-motion-enabled', !reduce.matches);
     if (reduce.matches) {
+      pending.forEach((element) => { reveal(element, true); revealObserver?.unobserve(element); });
       animations.forEach((animation) => animation.cancel());
       animations.clear();
       counters.forEach(finishCounter);

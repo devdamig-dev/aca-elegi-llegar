@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-28",
+  "status": "passed",
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Visible hero, headings, photo cards and statistics never receive pending opacity or reveal animations",
+      "status": "passed"
+    },
+    {
+      "name": "Reload with all page content in the initial viewport preserves every number without any entrance effect",
+      "status": "passed"
+    },
+    {
+      "name": "Only elements fully below the initial viewport are pending; partially visible and above-screen content remain visible",
+      "status": "passed"
+    },
+    {
+      "name": "Offscreen entrance is anticipated by 120px, plays once and always releases pending",
+      "status": "passed"
+    },
+    {
+      "name": "Reveal uses transform independently of hover/ambient translate and preserves an existing transform",
+      "status": "passed"
+    },
+    {
+      "name": "Offscreen counters start at zero while the card is still pending, then restore exact final values",
+      "status": "passed"
+    },
+    {
+      "name": "Initial visible counter keeps its exact final value even after observer events and scrolling",
+      "status": "passed"
+    },
+    {
+      "name": "Failed WAAPI reveal releases pending immediately and cannot leave content invisible",
+      "status": "passed"
+    },
+    {
+      "name": "Missing WAAPI or IntersectionObserver leaves content visible with final counters",
+      "status": "passed"
+    },
+    {
+      "name": "Missing IntersectionObserver never prepares hidden content",
+      "status": "passed"
+    },
+    {
+      "name": "Reduced motion at startup prepares no hidden elements or animated counters",
+      "status": "passed"
+    },
+    {
+      "name": "Switching to reduced motion releases all pending content, cancels active entrances and restores final counters",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard focus immediately reveals a pending ancestor without fading focused content",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard focus cancels an active or delayed reveal so the focused target is immediately visible",
+      "status": "passed"
+    },
+    {
+      "name": "Hero ambient movement writes offsets only to the two photos and resets on reduced motion",
+      "status": "passed"
+    },
+    {
+      "name": "Revealing while document is hidden releases pending without a delayed opacity reset",
+      "status": "passed"
+    },
+    {
+      "name": "Module remains idempotent and loading it again adds no observer or animation",
+      "status": "passed"
+    },
+    {
+      "name": "GTM, exact Socio Moto/Instagram links, email and versioned motion assets are preserved without running GTM",
+      "status": "passed"
+    }
+  ],
+  "scope": "Focused DOM/state tests for first-paint/reveal behavior with synthetic viewport geometry, IntersectionObserver and Web Animations API mocks.",
+  "limits": [
+    "No browser pixels or original user video reproduction; visual smoothness and browser paint ordering require browser QA.",
+    "Only motion.js is evaluated. GTM and other external scripts are not executed, and no analytics requests are made.",
+    "No PHP export created."
+  ]
+}
