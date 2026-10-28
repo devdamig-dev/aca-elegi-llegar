@@ -28,9 +28,11 @@
 .aca-footer{padding:64px 0 56px}
 .aca-footer a>img{width:146px;height:82px;object-fit:contain}
 .aca-footer p{margin-top:36px;padding-top:27px;font-size:15px;line-height:23.25px}
-.aca-footer .aca-footer-email{display:flex;align-items:center;gap:16px;width:max-content;max-width:100%;min-height:44px;margin-top:7px;font-size:15px;line-height:23.25px}
-.aca-footer-email:hover{color:var(--aca-mint)}
-.aca-footer .aca-footer-email>img{width:24px;height:24px;flex:none}
+.aca-page .aca-footer-contacts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;margin-top:7px}
+.aca-page .aca-footer .aca-footer-contact{display:flex;align-items:center;gap:16px;width:max-content;max-width:100%;min-height:44px;font-size:15px;line-height:23.25px}
+.aca-page .aca-footer-contact:hover{color:var(--aca-mint)}
+.aca-page .aca-footer .aca-footer-contact>img,.aca-page .aca-footer .aca-footer-contact>svg{width:24px;height:24px;flex:none}
+.aca-page .aca-footer-instagram>svg{color:#fff}
 @media(min-width:1280px){
  .aca-hero-copy{padding-top:118px}
  .aca-hero h1{margin-top:28px;line-height:.98}
@@ -96,6 +98,7 @@
  .aca-finale .aca-container>p{font-size:19px;line-height:24.7px;margin-top:31px}
  .aca-finale .aca-button{font-size:19px;margin-top:40px}
  .aca-footer{min-height:327px;padding:48px 0}
+ .aca-page .aca-footer-contacts{flex-direction:column;align-items:flex-start}
  .aca-footer p{font-size:15px;line-height:23.25px;margin-top:36px;padding-top:27px}
 }
 @media(max-width:370px){

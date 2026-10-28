@@ -6,6 +6,16 @@ Landing estática HTML/CSS/JavaScript con Pathway Extreme local, basada en el Fi
 - Repositorio: https://github.com/devdamig-dev/aca-elegi-llegar · rama `main`.
 - Diseño: https://www.figma.com/design/JNI4aFQ7pVd3xB5lYZPA6H/ACA-MOV?node-id=0-1
 
+## Ajustes de entrega · 28/10/2026
+
+- GTM del cliente `GTM-N66LS8`: script al comienzo de `head`, después de charset, y bloque noscript inmediatamente después de abrir `body`. Se conserva el `dataLayer` que ya utilizan las interacciones; no se agregan otros contenedores ni etiquetas de analítica.
+- «Conocé Socio Moto» apunta a https://promo.aca.org.ar/socios/sumate-a-la-rodada/index.php.
+- El footer conserva movilidad@aca.org.ar y suma Instagram @acamovilidad, con la URL proporcionada por el cliente. Contactos en fila con ajuste de línea en escritorio y apilados en mobile.
+- Destino de la entrega PHP: https://promo.aca.org.ar/aca-mov/elegi-llegar/.
+- Flujo acordado: revisión y aprobación de esta versión en GitHub Pages; después se prepara la exportación PHP. Todavía no se generó ni se envió un paquete de entrega.
+
+Para esa exportación: entregar `index.php` con todos los CSS, JS, imágenes y fuentes locales, conservar rutas relativas compatibles con el subdirectorio y evitar un `index.html` que compita como entrada. Actualizar canonical/og:url/og:image al dominio definitivo y retirar `noindex,nofollow` de la versión de producción. La revisión de GitHub conserva sus metadatos actuales. Comprobar la instalación real y GTM/Tag Assistant en el hosting del cliente; instalar el contenedor no verifica qué etiquetas o conversiones tiene configuradas dentro.
+
 ## Actualización 26/10/2026
 
 Ocho secciones conforme al contenido aprobado, logo ACA original, nuevas estadísticas FIA y CTA «Conocé Socio Moto». Se retiraron las dos secciones de autos del diseño anterior.
@@ -40,6 +50,6 @@ Subir `dist/` a cualquier hosting estático; no requiere compilación. `.github/
 
 La verificación inicial quedó en `docs/interaction-verification.json` y `docs/browser-verification.json`. La revisión del copy y la rotación automática se registra en `docs/interaction-revision-verification.json`; la evidencia inicial corresponde a los controles manuales y textos anteriores.
 
-El CTA lleva a la página oficial informativa de Socio Moto, porque Figma no define destino y los enlaces de alta consultados no estaban operativos. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conservan `noindex,nofollow` y la falta de tracking externo para esta URL de revisión.
+El CTA utiliza el destino de asociación confirmado por el cliente. Los tres datos FIA se conservan en mobile aunque el frame de 390 px no los incluye. No se declara una comparación pixel a pixel integral de todas las secciones. Se conserva `noindex,nofollow` para esta URL de revisión; el GTM solicitado ya forma parte de la landing.
 
 Detalles de diseño en `docs/approved-design.md` y continuidad en `HANDOFF.md`.

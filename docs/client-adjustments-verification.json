@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-28",
+  "status": "passed",
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Exactly one GTM loader and one matching noscript iframe are installed in head/body",
+      "status": "passed"
+    },
+    {
+      "name": "GTM snippet parses and creates the correct async request with a network-free DOM stub",
+      "status": "passed"
+    },
+    {
+      "name": "Existing app events preserve the same dataLayer and deferred script order",
+      "status": "passed"
+    },
+    {
+      "name": "Socio Moto CTA uses the exact requested URL",
+      "status": "passed"
+    },
+    {
+      "name": "Footer keeps email and adds the exact Instagram URL with an accessible label",
+      "status": "passed"
+    },
+    {
+      "name": "Footer retains shared shell width, wrapping contacts and separate 24px icon styles",
+      "status": "passed"
+    },
+    {
+      "name": "All referenced local HTML/CSS assets exist and no PHP export was created",
+      "status": "passed"
+    },
+    {
+      "name": "Review metadata is preserved for the later approved-domain export",
+      "status": "passed"
+    }
+  ],
+  "local_asset_references_checked": 35,
+  "scope": "Static HTML/CSS review and isolated GTM snippet execution using VM/DOM stubs without network access.",
+  "limitations": [
+    "No real GTM request, container tags, analytics hits or Tag Assistant session executed.",
+    "Footer wrapping and shell rules reviewed statically; pixel layout and link-destination availability were not tested.",
+    "PHP export intentionally not created; domain-specific metadata remains pending user approval/export."
+  ]
+}
