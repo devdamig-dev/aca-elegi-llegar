@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-28",
+  "source_commit": "9a3739b94da916d14678020e8d668961df489397",
+  "filename": "ACA-MOV-Elegi-Llegar-PHP-2026-10-28.zip",
+  "size_bytes": 4181144,
+  "sha256": "2d0abc2f385af4c94640b2d877687701598ea5507a505a171c164313aadba307",
+  "public_files_identical_to_tested_package": 48,
+  "zip_integrity": "passed",
+  "all_entries_match_staging": true,
+  "contains_php_and_htaccess": true,
+  "contains_no_competing_index_html": true
+}

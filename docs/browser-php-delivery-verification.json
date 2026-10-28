@@ -1,0 +1,42 @@
+{
+  "activeCopy": "\n                Lluvia\n                Menor adherenciaEl pavimento mojado reduce el agarre de los neumáticos.\n                Mayor distancia de frenadoDetener la moto puede requerir más espacio que en condiciones secas.\n                Marcas viales y superficies resbaladizasLa pintura vial y las superficies metálicas pueden volverse especialmente resbaladizas.\n              ",
+  "canonical": "https://promo.aca.org.ar/aca-mov/elegi-llegar/",
+  "gtm": [
+    "https://www.googletagmanager.com/gtm.js?id=GTM-N66LS8"
+  ],
+  "overflow": false,
+  "panels": [
+    {
+      "hidden": true,
+      "id": "risk-panel-cruces",
+      "items": 3
+    },
+    {
+      "hidden": false,
+      "id": "risk-panel-lluvia",
+      "items": 3
+    },
+    {
+      "hidden": true,
+      "id": "risk-panel-noche",
+      "items": 3
+    },
+    {
+      "hidden": true,
+      "id": "risk-panel-autos",
+      "items": 3
+    }
+  ],
+  "previewRobots": "noindex,follow",
+  "title": "ACA MOV | Elegí Llegar y seguridad vial en moto",
+  "date": "2026-10-28",
+  "code_commit": "9a3739b94da916d14678020e8d668961df489397",
+  "url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "deployment_run": "https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40739014599",
+  "screenshot": "docs/qa-seo-delivery.jpg",
+  "limits": [
+    "Visual desktop check; no mobile viewport emulation in this stage.",
+    "No client hosting deployment or Search Console verification.",
+    "GTM container installation checked, internal tags/conversions not audited."
+  ]
+}

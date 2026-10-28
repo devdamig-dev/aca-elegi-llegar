@@ -120,3 +120,17 @@
 - Sugerencias nuevas: ninguna. Bloqueos y aprobaciones: solo la aprobación previa a exportar solicitada por el usuario.
 - Continuidad: disponible para otro ejecutor desde main; conservar GTM-N66LS8, CTA de asociación e Instagram ya implementados y las instrucciones de producción de README.
 - Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
+
+
+## SEO y entrega PHP aprobada · 28/10/2026 · America/Buenos_Aires
+
+- **Objetivo y alcance:** con la aprobación expresa del usuario, configurar SEO, GTM y la URL final; exportar un ZIP PHP completo para que el usuario lo envíe al cliente.
+- **Terminado:** metadatos SEO y sociales, canonical, JSON-LD WebPage/ImageObject/Organization, sitemap, index.php, redirecciones de alias con conservación de parámetros de campaña, 404 para rutas desconocidas, assets locales y guía de instalación. GTM-N66LS8 una sola vez. Los doce textos de riesgos se incluyen en HTML y mantienen el carrusel de 2 segundos y el hover. Preview noindex; paquete de producción indexable.
+- **Referencias:** repo devdamig-dev/aca-elegi-llegar, main, código 9a3739b94da916d14678020e8d668961df489397, sin PR. Pages run 40739014599 success: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40739014599. URL final configurada: https://promo.aca.org.ar/aca-mov/elegi-llegar/. Configuración en delivery/, exportador scripts/export-php.py.
+- **Evidencia:** 42 comprobaciones satisfactorias: 12 PHP real, 12 pestañas y 18 regresión de animaciones. Informes en docs/php-delivery-verification.json, seo-risk-panels-verification.json y seo-motion-regression.json. Navegador publicado confirma canonical, GTM único, cuatro paneles de tres ítems y ausencia de overflow; docs/browser-php-delivery-verification.json y qa-seo-delivery.jpg.
+- **Paquete:** ACA-MOV-Elegi-Llegar-PHP-2026-10-28.zip, 4.181.144 bytes, SHA256 2d0abc2f385af4c94640b2d877687701598ea5507a505a171c164313aadba307. CRC y contenido comprobados; sus 48 archivos públicos son idénticos a los probados. docs/php-final-package-verification.json. Descargable preparado para el usuario; no se envió al cliente desde este chat.
+- **Límites:** PHP probado localmente con runtime nativo; .htaccess revisado estáticamente, sin prueba real en Apache. No se modificó el hosting del cliente ni se verificó la indexación en producción. Las etiquetas internas de GTM no se auditaron. Revisión visual de esta etapa en escritorio, sin nueva emulación mobile.
+- **Pendientes / próximos pasos autorizados:** el alcance de preparación y exportación está completo. El usuario envía el ZIP; el equipo técnico del cliente sube el contenido de public/ al directorio final, integra la línea de sitemap en el robots.txt de la raíz y realiza las comprobaciones posteriores indicadas en LEER-ANTES-DE-SUBIR.txt. No hay envío externo ni publicación en el hosting del cliente por este chat.
+- **Sugerencias nuevas:** ninguna. **Bloqueos y aprobaciones:** ninguno para esta entrega; la aprobación previa quedó satisfecha. Se conserva la visibilidad pública autorizada del repo.
+- **Continuidad:** disponible para otro ejecutor desde el ZIP, la guía y main; etapa de exportación completa, sin trabajo en segundo plano. El primer paso de instalación corresponde al equipo técnico del cliente.
+- **Core:** no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
