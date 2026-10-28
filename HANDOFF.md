@@ -92,3 +92,17 @@
 - Pendientes autorizados: ninguno de implementación para esta corrección. Se conserva la limitación de QA visual mobile de la etapa anterior. Sugerencias nuevas: ninguna. Bloqueos/aprobaciones: ninguno.
 - Continuidad: disponible para otro ejecutor desde main y los comentarios siguientes del usuario. No se modifica la visibilidad del repositorio.
 - Core: no registrado por este chat; sin acceso autorizado ni work item identificado de forma única.
+
+
+## Ajustes de entrega y revisión previa a PHP · 28/10/2026 · America/Buenos_Aires
+
+- Objetivo y alcance: incorporar GTM-N66LS8, el enlace de asociación Socio Moto y el Instagram del cliente en GitHub. El usuario pidió aprobar esta revisión antes de exportar la landing para PHP.
+- Terminado: GTM al comienzo del head y noscript primero en body; CTA a https://promo.aca.org.ar/socios/sumate-a-la-rodada/index.php; Instagram @acamovilidad junto al email del footer, con apilado mobile.
+- Publicado: main, código 66483a3ac356e09f1bb93da058fe850626b1a79e. Pages run 40732060584 success: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40732060584. Revisión: https://devdamig-dev.github.io/aca-elegi-llegar/. Sin PR.
+- Evidencia: 8/8 comprobaciones aisladas y 35 referencias locales; docs/client-adjustments-verification.json. Navegador publicado confirma los href, una inserción GTM-N66LS8, noscript primero en body, footer/hero de 1028px y ausencia de overflow. Captura y datos en docs/qa-footer-delivery.jpg y docs/browser-client-adjustments-verification.json.
+- Límites: mobile revisado en CSS, sin captura a ese viewport; no se auditan etiquetas/conversiones internas de GTM ni se hace sesión de Tag Assistant.
+- Pendientes / próximos pasos autorizados: el usuario revisa y aprueba esta versión. Tras su OK, preparar un ZIP con index.php y todos los assets/CSS/JS para https://promo.aca.org.ar/aca-mov/elegi-llegar/, actualizar metadata al dominio final y retirar noindex en producción; comprobar rutas relativas en subdirectorio. Aún no se exportó ni se envió al cliente. No se modificó su hosting.
+- Sugerencias nuevas: ninguna. Bloqueos y aprobaciones: aprobación de revisión pendiente por el flujo expresamente pedido por el usuario; no hay bloqueo de implementación.
+- Referencias: dist/index.html, dist/approved.css y README.md. Se conserva el estado público autorizado del repo, el diseño y las interacciones existentes.
+- Continuidad: disponible para otro ejecutor desde main; comenzar con el OK del usuario y el apartado de exportación de README.
+- Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.

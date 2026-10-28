@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-28",
+  "url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "code_commit": "66483a3ac356e09f1bb93da058fe850626b1a79e",
+  "deployment_run": "https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40732060584",
+  "deployment_status": "success",
+  "observed": {
+    "contacts": [
+      {
+        "height": 44,
+        "href": "mailto:movilidad@aca.org.ar",
+        "label": "movilidad@aca.org.ar",
+        "width": 197.671875
+      },
+      {
+        "height": 44,
+        "href": "https://www.instagram.com/acamovilidad?stkn=MW94aXUwaXV2ZXBweA==",
+        "label": "@acamovilidad",
+        "width": 154.140625
+      }
+    ],
+    "cta": "https://promo.aca.org.ar/socios/sumate-a-la-rodada/index.php",
+    "firstBodyElement": "NOSCRIPT",
+    "footerWidth": 1028,
+    "gtmScripts": [
+      "https://www.googletagmanager.com/gtm.js?id=GTM-N66LS8"
+    ],
+    "heroWidth": 1028,
+    "noscript": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-N66LS8\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>",
+    "overflow": false,
+    "styles": [
+      "styles.css?v=20261026-3",
+      "approved.css?v=20261028-1",
+      "interactions.css?v=20261027-1",
+      "motion.css?v=20261027-1"
+    ]
+  },
+  "visual_review": "Email and Instagram visible on one row in the desktop footer; both link areas are 44px high. Footer/hero widths match and no horizontal overflow observed.",
+  "limitations": [
+    "Mobile stacking verified in CSS only; browser viewport controls unavailable.",
+    "GTM script insertion and ID observed; internal container tags/conversions and Tag Assistant not audited.",
+    "No PHP export or deployment on client hosting performed."
+  ],
+  "console": "No page-origin JavaScript errors observed; browser extension metadata error excluded."
+}
