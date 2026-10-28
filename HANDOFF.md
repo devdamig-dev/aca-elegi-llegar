@@ -106,3 +106,17 @@
 - Referencias: dist/index.html, dist/approved.css y README.md. Se conserva el estado público autorizado del repo, el diseño y las interacciones existentes.
 - Continuidad: disponible para otro ejecutor desde main; comenzar con el OK del usuario y el apartado de exportación de README.
 - Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.
+
+
+## Corrección de parpadeo y tarjetas del hero · 28/10/2026 · America/Buenos_Aires
+
+- Objetivo y alcance: resolver las entradas que parecían cargar dos veces y el movimiento percibido entre textos/tarjetas del hero, según el video del usuario. Mantener los ajustes de entrega y esperar aprobación antes de exportar PHP.
+- Causas: contenido inicialmente visible pasaba luego a opacity0 al dispararse IntersectionObserver; los contadores podían mostrar el valor final antes de comenzar; WAAPI y profundidad del hero competían por translate. No había duplicación de DOM en las tarjetas.
+- Terminado: preparar entradas solo debajo del viewport, dispararlas anticipadamente una vez, mantener el contenido visible al cargar/restaurar, contar junto con la entrada de la tarjeta y separar transform de entrada de translate de hover/profundidad. Tarjetas del hero estables; movimiento suave solo en sus dos fotos. Foco/reduced/fallos de WAAPI liberan inmediatamente el contenido.
+- Publicado: código 1fc59e8ee7e37bdd8e9c71119bf40d5bcdbc685d; Pages run 40734579786 success: https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40734579786. Revisión: https://devdamig-dev.github.io/aca-elegi-llegar/. Rama main, sin PR.
+- Evidencia: 18/18 verificaciones focalizadas en docs/motion-flicker-verification.json. Navegador: tarjetas/textos conservan coordenadas después de mover cursor, translate none, opacity1; entradas se liberan al hacer scroll y recarga a mitad de página conserva las cifras visibles. Sin overflow ni errores propios observados. docs/browser-motion-flicker-verification.json y docs/qa-hero-stable.jpg.
+- Límites: revisión visual en escritorio disponible, sin emulación mobile ni grabación cuadro a cuadro de la versión corregida.
+- Pendientes / próximos pasos autorizados: usuario revisa esta corrección; tras su OK, exportar el paquete PHP para la URL final ya documentada. No se creó ZIP ni se envió al cliente.
+- Sugerencias nuevas: ninguna. Bloqueos y aprobaciones: solo la aprobación previa a exportar solicitada por el usuario.
+- Continuidad: disponible para otro ejecutor desde main; conservar GTM-N66LS8, CTA de asociación e Instagram ya implementados y las instrucciones de producción de README.
+- Core: no registrado por este chat; sin vía autorizada ni work item identificado de forma única.

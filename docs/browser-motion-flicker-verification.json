@@ -1,0 +1,145 @@
+{
+  "url": "https://devdamig-dev.github.io/aca-elegi-llegar/",
+  "hero": {
+    "cards": [
+      {
+        "name": "aca-float aca-float-understand",
+        "opacity": "1",
+        "textX": 63,
+        "textY": 14.399993896484377,
+        "translate": "none",
+        "x": 736.8265380859375,
+        "y": 155.3000030517578
+      },
+      {
+        "name": "aca-float aca-float-change",
+        "opacity": "1",
+        "textX": 63,
+        "textY": 16.20001220703125,
+        "translate": "none",
+        "x": 1022.3656005859376,
+        "y": 311
+      },
+      {
+        "name": "aca-float aca-float-community",
+        "opacity": "1",
+        "textX": 63,
+        "textY": 15.300018310546877,
+        "translate": "none",
+        "x": 709.8265380859375,
+        "y": 434.2999877929687
+      }
+    ],
+    "heroOpacity": "1",
+    "overflow": false,
+    "pendingInViewport": [],
+    "pendingTotal": 40,
+    "resources": [
+      "motion.css?v=20261028-2",
+      "motion.js?v=20261028-2"
+    ]
+  },
+  "heroCardsAfterPointer": [
+    {
+      "name": "aca-float aca-float-understand",
+      "opacity": "1",
+      "textX": 63,
+      "textY": 14.399993896484377,
+      "translate": "none",
+      "x": 736.8265380859375,
+      "y": 155.3000030517578
+    },
+    {
+      "name": "aca-float aca-float-change",
+      "opacity": "1",
+      "textX": 63,
+      "textY": 16.20001220703125,
+      "translate": "none",
+      "x": 1022.3656005859376,
+      "y": 311
+    },
+    {
+      "name": "aca-float aca-float-community",
+      "opacity": "1",
+      "textX": 63,
+      "textY": 15.300018310546877,
+      "translate": "none",
+      "x": 709.8265380859375,
+      "y": 434.2999877929687
+    }
+  ],
+  "heroCardsStable": true,
+  "firstScroll": {
+    "introOpacity": "1",
+    "pillarOpacity": [
+      "0",
+      "0",
+      "0"
+    ],
+    "visiblePending": []
+  },
+  "secondScroll": {
+    "pillars": [
+      {
+        "opacity": "1",
+        "pending": false
+      },
+      {
+        "opacity": "1",
+        "pending": false
+      },
+      {
+        "opacity": "1",
+        "pending": false
+      }
+    ],
+    "visiblePending": []
+  },
+  "midPageReload": {
+    "titleOpacity": "1",
+    "values": [
+      {
+        "counted": "true",
+        "text": "46%",
+        "top": 655.90625
+      },
+      {
+        "counted": "true",
+        "text": "4.060",
+        "top": 647.90625
+      },
+      {
+        "counted": "true",
+        "text": "20.3%",
+        "top": 647.90625
+      },
+      {
+        "counted": "true",
+        "text": "43%",
+        "top": 905.90625
+      },
+      {
+        "text": "17.9%",
+        "top": 1154.90625
+      },
+      {
+        "text": "3.8%",
+        "top": 1154.90625
+      },
+      {
+        "text": "3%",
+        "top": 1154.90625
+      }
+    ],
+    "visiblePending": []
+  },
+  "date": "2026-10-28",
+  "code_commit": "1fc59e8ee7e37bdd8e9c71119bf40d5bcdbc685d",
+  "deployment": "https://github.com/devdamig-dev/aca-elegi-llegar/actions/runs/40734579786",
+  "deployment_status": "success",
+  "limitations": [
+    "Real-browser check at the available desktop viewport; no mobile viewport emulation in this browser.",
+    "No frame-by-frame recording of the corrected page; state measurements and screenshots complement 18 deterministic lifecycle checks."
+  ],
+  "console": "No page-origin errors observed; extension metadata errors excluded."
+}
